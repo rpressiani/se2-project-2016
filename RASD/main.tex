@@ -1,0 +1,41 @@
+\documentclass{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{vhistory}
+\usepackage[ampersand]{easylist}
+
+\title{SE2 - RASD}
+\author{Matteo Penco, Riccardo Pressiani}
+\date{October 2016}
+
+
+\begin{document}
+
+\maketitle
+\centering{
+	\normalsize{Version 0.1}
+}
+
+\begin{versionhistory}
+  \vhEntry{0.1}{26.10.16}{RP}{Document created}
+\end{versionhistory}
+
+\tableofcontents
+
+%Introduction
+\input{chapters/1-introduction}
+%Overall Description
+\input{chapters/2-overall-description}
+%Specific requirements
+\input{chapters/3-specific-requirements}
+
+\listoffigures
+\begingroup
+\let\clearpage\relax
+\listoftables
+\endgroup
+
+\bibliographystyle{unsrt}
+\bibliography{ref}
+
+\end{document}
