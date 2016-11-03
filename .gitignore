@@ -4,10 +4,10 @@
 *.lof
 *.log
 *.lot
-*.pdf
 *.synctex.gz
 *.toc
 *.ver
+main.pdf
 
 # Ignore DS_Store and files starting with ._ (for Mac)
 .DS_Store
