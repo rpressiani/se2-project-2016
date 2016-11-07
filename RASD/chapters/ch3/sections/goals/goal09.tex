@@ -1,15 +1,12 @@
-\subsection{Goal 9}
-The rental ends when the user parks in a safe area and exit the car.
+\subsection{Goal 8}
+As soon as the engine is ignited, the user is notified by the onboard computer about the current amount of money he/she will be charged at the end of the rental.
 
 \setcounter{secnumdepth}{3}
-\subsubsection{Functional requirement 9.1}
-If the engine is set to OFF, the GPS location of the car is whitin one of the safe areas defined by the system administrator, the seat sensors are all set to 0 (zero) and all the car's doors are closed the rental ends.
+\subsubsection{Functional requirement 8.1}
+If the engine is set to ON, a stopwatch start on that rental.
 
-\subsubsection{Functional requirement 9.2}
-If the rental is ended the related watchstop stops and the final cost of the fare is calculated by the system.
+\subsubsection{Functional requirement 8.2}
+The system calculates the current cost of the rental by multiplying the minutes elapsed by a fixed rate per minute.
 
-\subsubsection{Functional requirement 9.3}
-If the user is no eligible for additional discount or penalities on the final cost of the rental, the user is billed according to the payment method that he/she has provided.
-
-\subsubsection{Functional requirement 9.4}
-The car related to an ended rental is set from IN USE to AVAILABLE.
+\subsubsection{Functional requirement 8.3}
+The onboard computer is constantly updated with the cost of the rental.

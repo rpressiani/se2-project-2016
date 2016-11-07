@@ -1,6 +1,15 @@
-\subsection{Goal 10}
-If the user shares the rented car with at least two passengers during the whole duration of the rental, he/she is eligible for a 10\% discount on the total cost of that rental.
+\subsection{Goal 9}
+The rental ends when the user parks in a safe area and exit the car.
 
 \setcounter{secnumdepth}{3}
-\subsubsection{Functional requirement 10.1}
-If at least three seat sensors are set to 1 form the moment the engine is set to ON to the moment it is set to OFF, the system applies a 10\% discount on the total cost of the last rental.
+\subsubsection{Functional requirement 9.1}
+If the engine is set to OFF, the GPS location of the car is whitin one of the safe areas defined by the system administrator, the seat sensors are all set to 0 (zero) and all the car's doors are closed the rental ends.
+
+\subsubsection{Functional requirement 9.2}
+If the rental is ended the related watchstop stops and the final cost of the fare is calculated by the system.
+
+\subsubsection{Functional requirement 9.3}
+If the user is no eligible for additional discount or penalities on the final cost of the rental, the user is billed according to the payment method that he/she has provided.
+
+\subsubsection{Functional requirement 9.4}
+The car related to an ended rental is set from IN USE to AVAILABLE.
