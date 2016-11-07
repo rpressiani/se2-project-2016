@@ -7,15 +7,37 @@
 \usepackage{natbib}
 \usepackage{url}
 \usepackage{scrextend}
-
-\title{SE2 - RASD}
-\author{Matteo Penco, Riccardo Pressiani}
-\date{October 2016}
-
+\usepackage{graphicx}
+\graphicspath{ {img/} }
+\usepackage{multicol}
 
 \begin{document}
 
-\maketitle
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.5\textwidth]{polimi-logo}\par\vspace{1cm}
+	{\scshape\LARGE Politecnico di Milano\par}
+	\vspace{1cm}
+	{\scshape\Large Software Engineering 2 project\par}
+	\vspace{1.5cm}
+	{\huge\bfseries PowerEnJoy\par}
+	\vspace{2cm}
+	\begin{multicols}{2}
+		{\Large\itshape Matteo Penco\par}
+		\vspace{0.25cm}
+		mat. 875740
+		\vfill\columnbreak
+		{\Large\itshape Riccardo Pressiani\par}
+		\vspace{0.25cm}
+		mat. 874948
+	\end{multicols}
+	
+	\vfill
+	
+	{\Large Version 0.1 draft\par}
+	\vspace{1.25cm}
+	{\large \today\par}
+\end{titlepage}
 
 \begin{versionhistory}
   \vhEntry{0.1}{26.10.16}{RP}{Document created}
