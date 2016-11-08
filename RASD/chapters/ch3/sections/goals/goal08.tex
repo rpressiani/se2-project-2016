@@ -1,6 +1,6 @@
 \subsection{Goal 8}
-If a car is not picked up within one hour from the reservation, the system tags the car as available again and the reservation expires, besides the user pays a fee of 1 EUR.
+If a car is not picked up within one hour from the booking, the system tags the car as available again and the reservation expires, besides the user pays a fee of 1 EUR.
 
 \setcounter{secnumdepth}{3}
 \subsubsection{Functional requirement 8.1}
-If the “reservation timer” indicates that one hour has passed and in this time the “driver sensor” never gave a positive output, then the system tags the car as available and the user’s reservation expires, besides the system charges the user a fee of 1 EUR.
+When the user books a car, a stopwatch starts: if one hour has passed and in this time car's sensor never indicated that the driver was in the car ready do start the rental, then the system tags the car as available and the user’s booking expires, besides the system charges the user a fee of 1 EUR.
