@@ -8,11 +8,12 @@
 \usepackage{url}
 \usepackage{scrextend}
 \usepackage{graphicx}
-\graphicspath{ {img/} }
 \usepackage{multicol}
 \usepackage[titletoc]{appendix}
 \usepackage{float}
 \usepackage{blindtext}
+
+\graphicspath{ {img/} }
 
 \begin{document}
 
@@ -54,11 +55,12 @@
 \input{chapters/ch2/2-overall-description}
 %Specific requirements
 \input{chapters/ch3/3-specific-requirements}
-%Scenarios and UML models
-\input{chapters/ch4/4-scenarios-uml-models}
 
 \begin{appendices}
-	\input{chapters/appendices/appendix-a}
+	%Scenarios and UML models
+	\input{chapters/appendices/appendix-a/a-scenarios-uml-models}
+	%Alloy
+	\input{chapters/appendices/appendix-b/b-alloy}
 \end{appendices}
 
 \listoffigures
