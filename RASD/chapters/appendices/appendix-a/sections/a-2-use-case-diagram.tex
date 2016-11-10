@@ -168,3 +168,22 @@
 				\item It passed an hour since the booking confirmation after the system gave the possibility to the user to unlock car doors. In this case the user can't unlock car doors because the system has already cancelled automatically booking.  
 			\end{itemize}
 	\end{labeling}
+	
+\subsection{Use case description 9 - Begin rental}
+\begin{labeling}{use-case-desc-9}
+		\item[\textbf{Name}] Begin rental
+		\item[\textbf{Actors}] User
+		\item[\textbf{Entry conditions}] The user must have unlocked car doors.
+		\item[\textbf{Flow of events}]
+			\begin{itemize}
+				\item[]
+				\item The user inserts the PIN provided at the moment of registration on the onboard computer of the car.
+				\item The user ignites the engine.
+			\end{itemize}
+		\item[\textbf{Exit conditions}] The user starts driving the car.
+		\item[\textbf{Exceptions}]
+			\begin{itemize}
+				\item[]
+				\item The PIN inserted by the user is not correct. In this case the system doesn't allow the usere to ignite the engine until he inserts the correct PIN. 
+			\end{itemize}
+	\end{labeling}
