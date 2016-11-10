@@ -206,3 +206,25 @@
 				\item The car's battery runs out. In this case the onboard computer can't give any further information about the ongoing rental except the total cost of the rental reached before the battery exhausted. 
 			\end{itemize}
 	\end{labeling}
+	
+\subsection{Use case description 11 - End rental}
+\begin{labeling}{use-case-desc-11}
+		\item[\textbf{Name}] End rental
+		\item[\textbf{Actors}] User
+		\item[\textbf{Entry conditions}] The user must have started a rental.
+		\item[\textbf{Flow of events}]
+			\begin{itemize}
+				\item[]
+				\item The user parks the car in a safe area.
+				\item The user turns off the engine.
+				\item The user and, eventually, passengers exit the car and close car doors.
+			\end{itemize}
+		\item[\textbf{Exit conditions}] The user successfully ends the rental.
+		\item[\textbf{Exceptions}]
+			\begin{itemize}
+				\item[]
+				\item The user parks the car non in a safe area. In this case the system doesn't allow the user to end the rental.
+				\item The user parks the car in a safe area but doesn't turn off the engine. In this case the system doesn't allow the user to end the rental.
+				\item The user parks the car in a safe area, turns off the engine but he/her and eventually passengers don't exit the car or close car doors. In this case the system doesn't allow the user to end the rental.  
+			\end{itemize}
+	\end{labeling}
