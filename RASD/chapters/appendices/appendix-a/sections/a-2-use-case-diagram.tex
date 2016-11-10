@@ -128,3 +128,23 @@
 				\item Another user books a car before the user confirms the booking. In this case the system redirects the user on the map updated with the new situation of available cars.
 			\end{itemize}
 	\end{labeling}
+	
+\subsection{Use case description 7 - Cancel booking}
+\begin{labeling}{use-case-desc-7}
+		\item[\textbf{Name}] Cancel booking
+		\item[\textbf{Actors}] User
+		\item[\textbf{Entry conditions}] The user must have booked a car.
+		\item[\textbf{Flow of events}]
+			\begin{itemize}
+				\item[]
+				\item The user clicks on the button to cancel booking
+				\item The system asks the user if he/she wants to confirm the action
+				\item The system confirms the cancellation of booking
+			\end{itemize}
+		\item[\textbf{Exit conditions}] user successfully cancels booking of the car.
+		\item[\textbf{Exceptions}]
+			\begin{itemize}
+				\item[]
+				\item It passed an hour since the booking confirmation. In this case the system has already cancelled automatically the booking. 
+			\end{itemize}
+	\end{labeling}
