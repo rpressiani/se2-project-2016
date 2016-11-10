@@ -29,8 +29,27 @@
 			\end{itemize}
 	\end{labeling}
 
-\subsection{Use case description 3 - Sign in}
+\subsection{Use case description 2 - Receive the PIN}
 \begin{labeling}{use-case-desc-2}
+		\item[\textbf{Name}] Receive the PIN
+		\item[\textbf{Actors}] User
+		\item[\textbf{Entry conditions}] The user must have completed the registration.
+		\item[\textbf{Flow of events}]
+			\begin{itemize}
+				\item[]
+				\item The system generates the new PIN for the registered user
+				\item The system sends to the registered user his/her PIN via mail
+			\end{itemize}
+		\item[\textbf{Exit conditions}] The user successfully receives the PIN to use PowerEnJoy cars.
+		\item[\textbf{Exceptions}]
+			\begin{itemize}
+				\item[]
+				\item The user doesn’t receive the PIN via mail. In this case the user can ask to the system to send again the mail with the PIN.
+			\end{itemize}
+	\end{labeling}
+
+\subsection{Use case description 3 - Sign in}
+\begin{labeling}{use-case-desc-3}
 		\item[\textbf{Name}] Sign in
 		\item[\textbf{Actors}] User
 		\item[\textbf{Entry conditions}] The user has to be already registered.
@@ -46,13 +65,8 @@
 		\item[\textbf{Exceptions}]
 			\begin{itemize}
 				\item[]
-<<<<<<< HEAD
 				\item Email or password provided by the user are not correct. In this case the system notifies the user of the error and let him/her to input again his/her credentials. 
-=======
-				\item Credentials provided by the user are not correct. In this case the system notifies the us.
-				\item The user doesn’t receive the PIN via mail. In this case the user can ask to the system to send again the mail with the PIN. 
->>>>>>> 996b3693a1c762d2f95af4817b46a466fb0b512f
 			\end{itemize}
 	\end{labeling}
 	
-\subsection{Use case description 3}
+\subsection{Use case description 4}
