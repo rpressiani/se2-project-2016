@@ -107,3 +107,24 @@
 				\item Given the assumptions written below, there are no exceptions in this flow of events.
 			\end{itemize}
 	\end{labeling}	
+	
+\subsection{Use case description 6 - Book a car}
+\begin{labeling}{use-case-desc-6}
+		\item[\textbf{Name}] Book a car
+		\item[\textbf{Actors}] User
+		\item[\textbf{Entry conditions}] The user must have looked for available cars on the map.
+		\item[\textbf{Flow of events}]
+			\begin{itemize}
+				\item[]
+				\item The user clicks on an available car shown on the map
+				\item The system asks the user if he/she wants to confirm the action
+				\item The user clicks on the confirmation button
+				\item The system confirms the booking of the chosen car and gives the opportunity to cancel the booking
+			\end{itemize}
+		\item[\textbf{Exit conditions}] The user successfully books a car.
+		\item[\textbf{Exceptions}]
+			\begin{itemize}
+				\item[]
+				\item Another user books a car before the user confirms the booking. In this case the system redirects the user on the map updated with the new situation of available cars.
+			\end{itemize}
+	\end{labeling}
