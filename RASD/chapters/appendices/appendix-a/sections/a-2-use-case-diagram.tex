@@ -69,4 +69,22 @@
 			\end{itemize}
 	\end{labeling}
 	
-\subsection{Use case description 4}
+\subsection{Use case description 4 - Find a car}
+\begin{labeling}{use-case-desc-4}
+		\item[\textbf{Name}] Find a car
+		\item[\textbf{Actors}] User
+		\item[\textbf{Entry conditions}] The user has to be logged in.
+		\item[\textbf{Flow of events}]
+			\begin{itemize}
+				\item[]
+				\item The user inserts a specified address or chooses his current position
+				\item The system loads on the map all available cars near the position provided by the user
+			\end{itemize}
+		\item[\textbf{Exit conditions}] The user can see on the map all available cars near the position provided. 
+		\item[\textbf{Exceptions}]
+			\begin{itemize}
+				\item[]
+				\item The user inserts an invalid address. In this case the system notifies the user of the error and let him/her to insert a new address.
+				\item User’s GPS doesn’t work. In this case the system notifies the user of the impossibility to process the request.
+			\end{itemize}
+	\end{labeling}
