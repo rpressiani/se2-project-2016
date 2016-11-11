@@ -9,222 +9,264 @@
 
 \subsection{Use case description 1 - Sign up}
 \begin{labeling}{use-case-desc-1}
-		\item[\textbf{Name}] Sign up
-		\item[\textbf{Actors}] User
-		\item[\textbf{Entry conditions}] There are no entry conditions.
-		\item[\textbf{Flow of events}]
-			\begin{itemize}
-				\item[]
-				\item The user accesses the homepage of PowerEnJoy or opens the app.
-				\item The user inserts his/her credentials in the registration form.
-				\item The user clicks on the sign up button.
-				\item The system processes the registration of the user.
-			\end{itemize}
-		\item[\textbf{Exit conditions}] The user is successfully registered to the system.
-		\item[\textbf{Exceptions}]
-			\begin{itemize}
-				\item[]
-				\item Credentials provided by the user are not correct. In this case the system notifies the user of the error and let him/her to input again his/her credentials. 
-				\item User is already registered. In this case the system notifies the user of the impossibility to register.
-			\end{itemize}
-	\end{labeling}
+	\item[\textbf{Name}] Sign up
+	\item[\textbf{Actors}] User
+	\item[\textbf{Entry conditions}] There are no entry conditions.
+	\item[\textbf{Flow of events}]
+		\begin{itemize}
+			\item[]
+			\item The user accesses the homepage of PowerEnJoy or opens the app.
+			\item The user inserts his/her credentials in the registration form.
+			\item The user clicks on the sign up button.
+			\item The system processes the registration of the user.
+		\end{itemize}
+	\item[\textbf{Exit conditions}] The user is successfully registered to the system.
+	\item[\textbf{Exceptions}]
+		\begin{itemize}
+			\item[]
+			\item Credentials provided by the user are not correct. In this case the system notifies the user of the error and let him/her to input again his/her credentials. 
+			\item User is already registered. In this case the system notifies the user of the impossibility to register.
+		\end{itemize}
+\end{labeling}
 
 \subsection{Use case description 2 - Receive the PIN}
 \begin{labeling}{use-case-desc-2}
-		\item[\textbf{Name}] Receive the PIN
-		\item[\textbf{Actors}] User
-		\item[\textbf{Entry conditions}] The user must have completed the registration.
-		\item[\textbf{Flow of events}]
-			\begin{itemize}
-				\item[]
-				\item The system generates the new PIN for the registered user
-				\item The system sends to the registered user his/her PIN via mail
-			\end{itemize}
-		\item[\textbf{Exit conditions}] The user successfully receives the PIN to use PowerEnJoy cars.
-		\item[\textbf{Exceptions}]
-			\begin{itemize}
-				\item[]
-				\item The user doesn’t receive the PIN via mail. In this case the user can ask to the system to send again the mail with the PIN.
-			\end{itemize}
-	\end{labeling}
+	\item[\textbf{Name}] Receive the PIN
+	\item[\textbf{Actors}] User
+	\item[\textbf{Entry conditions}] The user must have completed the registration.
+	\item[\textbf{Flow of events}]
+		\begin{itemize}
+			\item[]
+			\item The system generates the new PIN for the registered user
+			\item The system sends to the registered user his/her PIN via mail
+		\end{itemize}
+	\item[\textbf{Exit conditions}] The user successfully receives the PIN to use PowerEnJoy cars.
+	\item[\textbf{Exceptions}]
+		\begin{itemize}
+			\item[]
+			\item The user doesn’t receive the PIN via mail. In this case the user can ask to the system to send again the mail with the PIN.
+		\end{itemize}
+\end{labeling}
 
 \subsection{Use case description 3 - Sign in}
 \begin{labeling}{use-case-desc-3}
-		\item[\textbf{Name}] Sign in
-		\item[\textbf{Actors}] User
-		\item[\textbf{Entry conditions}] The user has to be already registered.
-		\item[\textbf{Flow of events}]
-			\begin{itemize}
-				\item[]
-				\item The user accesses the homepage of PowerEnJoy or opens the app
-				\item The user inputs his email and password
-				\item The user clicks on the sign in button
-				\item The system redirects the user on his personal page
-			\end{itemize}
-		\item[\textbf{Exit conditions}] The user is successfully redirected to his personal page.
-		\item[\textbf{Exceptions}]
-			\begin{itemize}
-				\item[]
-				\item Email or password provided by the user are not correct. In this case the system notifies the user of the error and let him/her to input again his/her credentials. 
-			\end{itemize}
-	\end{labeling}
-	
+	\item[\textbf{Name}] Sign in
+	\item[\textbf{Actors}] User
+	\item[\textbf{Entry conditions}] The user has to be already registered.
+	\item[\textbf{Flow of events}]
+		\begin{itemize}
+			\item[]
+			\item The user accesses the homepage of PowerEnJoy or opens the app
+			\item The user inputs his email and password
+			\item The user clicks on the sign in button
+			\item The system redirects the user on his personal page
+		\end{itemize}
+	\item[\textbf{Exit conditions}] The user is successfully redirected to his personal page.
+	\item[\textbf{Exceptions}]
+		\begin{itemize}
+			\item[]
+			\item Email or password provided by the user are not correct. In this case the system notifies the user of the error and let him/her to input again his/her credentials. 
+		\end{itemize}
+\end{labeling}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{sequence-diagrams/login}
+	\caption[Sequence diagram - Sign in]{The sequence diagram above describes the sign in procedure.}
+	\label{fig:login-sequence-diagram}
+\end{figure}
+\clearpage
+
 \subsection{Use case description 4 - Find a car}
 \begin{labeling}{use-case-desc-4}
-		\item[\textbf{Name}] Find a car
-		\item[\textbf{Actors}] User
-		\item[\textbf{Entry conditions}] The user has to be logged in.
-		\item[\textbf{Flow of events}]
-			\begin{itemize}
-				\item[]
-				\item The user inserts a specified address or chooses his current position
-				\item The system loads on the map all available cars near the position provided by the user
-			\end{itemize}
-		\item[\textbf{Exit conditions}] The user can see on the map all available cars near the position provided. 
-		\item[\textbf{Exceptions}]
-			\begin{itemize}
-				\item[]
-				\item The user inserts an invalid address. In this case the system notifies the user of the error and let him/her to insert a new address.
-				\item User’s GPS doesn’t work. In this case the system notifies the user of the impossibility to process the request.
-			\end{itemize}
-	\end{labeling}
-	
+	\item[\textbf{Name}] Find a car
+	\item[\textbf{Actors}] User
+	\item[\textbf{Entry conditions}] The user has to be logged in.
+	\item[\textbf{Flow of events}]
+		\begin{itemize}
+			\item[]
+			\item The user inserts a specified address or chooses his current position
+			\item The system loads on the map all available cars near the position provided by the user
+		\end{itemize}
+	\item[\textbf{Exit conditions}] The user can see on the map all available cars near the position provided. 
+	\item[\textbf{Exceptions}]
+		\begin{itemize}
+			\item[]
+			\item The user inserts an invalid address. In this case the system notifies the user of the error and let him/her to insert a new address.
+			\item User’s GPS doesn’t work. In this case the system notifies the user of the impossibility to process the request.
+		\end{itemize}
+\end{labeling}
+
 \subsection{Use case description 5 - Get details about a car}
 \begin{labeling}{use-case-desc-5}
-		\item[\textbf{Name}] Get details about a car
-		\item[\textbf{Actors}] User
-		\item[\textbf{Entry conditions}] The user must have looked for available cars on the map.
-		\item[\textbf{Flow of events}]
-			\begin{itemize}
-				\item[]
-				\item The user clicks on an available car shown on the map
-				\item The system shows the details about the car chosen by the user
-			\end{itemize}
-		\item[\textbf{Exit conditions}] The user can see the details of the chosen available car.
-		\item[\textbf{Exceptions}]
-			\begin{itemize}
-				\item[]
-				\item Given the assumptions written below, there are no exceptions in this flow of events.
-			\end{itemize}
-	\end{labeling}	
-	
+	\item[\textbf{Name}] Get details about a car
+	\item[\textbf{Actors}] User
+	\item[\textbf{Entry conditions}] The user must have looked for available cars on the map.
+	\item[\textbf{Flow of events}]
+		\begin{itemize}
+			\item[]
+			\item The user clicks on an available car shown on the map
+			\item The system shows the details about the car chosen by the user
+		\end{itemize}
+	\item[\textbf{Exit conditions}] The user can see the details of the chosen available car.
+	\item[\textbf{Exceptions}]
+		\begin{itemize}
+			\item[]
+			\item Given the assumptions written below, there are no exceptions in this flow of events.
+		\end{itemize}
+\end{labeling}
+
 \subsection{Use case description 6 - Book a car}
 \begin{labeling}{use-case-desc-6}
-		\item[\textbf{Name}] Book a car
-		\item[\textbf{Actors}] User
-		\item[\textbf{Entry conditions}] The user must have looked for available cars on the map.
-		\item[\textbf{Flow of events}]
-			\begin{itemize}
-				\item[]
-				\item The user clicks on an available car shown on the map
-				\item The system asks the user if he/she wants to confirm the action
-				\item The user clicks on the confirmation button
-				\item The system confirms the booking of the chosen car and gives the opportunity to cancel the booking
-			\end{itemize}
-		\item[\textbf{Exit conditions}] The user successfully books a car.
-		\item[\textbf{Exceptions}]
-			\begin{itemize}
-				\item[]
-				\item Another user books a car before the user confirms the booking. In this case the system redirects the user on the map updated with the new situation of available cars.
-			\end{itemize}
-	\end{labeling}
-	
+	\item[\textbf{Name}] Book a car
+	\item[\textbf{Actors}] User
+	\item[\textbf{Entry conditions}] The user must have looked for available cars on the map.
+	\item[\textbf{Flow of events}]
+		\begin{itemize}
+			\item[]
+			\item The user clicks on an available car shown on the map
+			\item The system asks the user if he/she wants to confirm the action
+			\item The user clicks on the confirmation button
+			\item The system confirms the booking of the chosen car and gives the opportunity to cancel the booking
+		\end{itemize}
+	\item[\textbf{Exit conditions}] The user successfully books a car.
+	\item[\textbf{Exceptions}]
+		\begin{itemize}
+			\item[]
+			\item Another user books a car before the user confirms the booking. In this case the system redirects the user on the map updated with the new situation of available cars.
+		\end{itemize}
+\end{labeling}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{sequence-diagrams/booking}
+	\caption[Sequence diagram - Book a car]{The sequence diagram above describes the car booking procedure.}
+	\label{fig:booking-sequence-diagram}
+\end{figure}
+\clearpage
+
 \subsection{Use case description 7 - Cancel booking}
 \begin{labeling}{use-case-desc-7}
-		\item[\textbf{Name}] Cancel booking
-		\item[\textbf{Actors}] User
-		\item[\textbf{Entry conditions}] The user must have booked a car.
-		\item[\textbf{Flow of events}]
-			\begin{itemize}
-				\item[]
-				\item The user clicks on the button to cancel booking
-				\item The system asks the user if he/she wants to confirm the action
-				\item The system confirms the cancellation of booking
-			\end{itemize}
-		\item[\textbf{Exit conditions}] user successfully cancels booking of the car.
-		\item[\textbf{Exceptions}]
-			\begin{itemize}
-				\item[]
-				\item It passed an hour since the booking confirmation. In this case the system has already cancelled automatically booking. 
-			\end{itemize}
-	\end{labeling}
-	
+	\item[\textbf{Name}] Cancel booking
+	\item[\textbf{Actors}] User
+	\item[\textbf{Entry conditions}] The user must have booked a car.
+	\item[\textbf{Flow of events}]
+		\begin{itemize}
+			\item[]
+			\item The user clicks on the button to cancel booking
+			\item The system asks the user if he/she wants to confirm the action
+			\item The system confirms the cancellation of booking
+		\end{itemize}
+	\item[\textbf{Exit conditions}] user successfully cancels booking of the car.
+	\item[\textbf{Exceptions}]
+		\begin{itemize}
+			\item[]
+			\item It passed an hour since the booking confirmation. In this case the system has already cancelled automatically booking. 
+		\end{itemize}
+\end{labeling}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{sequence-diagrams/cancel-booking}
+	\caption[Sequence diagram - Cancel booking]{The sequence diagram above describes the booking cancellation procedure.}
+	\label{fig:cancel-booking-sequence-diagram}
+\end{figure}
+\clearpage
+
 \subsection{Use case description 8 - Unlock car doors}
 \begin{labeling}{use-case-desc-8}
-		\item[\textbf{Name}] Unlock car doors
-		\item[\textbf{Actors}] User
-		\item[\textbf{Entry conditions}] The user must have booked a car.
-		\item[\textbf{Flow of events}]
-			\begin{itemize}
-				\item[]
-				\item The user is notified by the system that he's near enough to the booked car to unlock its doors
-				\item The user clicks on the button to unlock the booked car
-				\item The system unlocks car doors
-			\end{itemize}
-		\item[\textbf{Exit conditions}] The user successfully unlocks car doors.
-		\item[\textbf{Exceptions}]
-			\begin{itemize}
-				\item[]
-				\item It passed an hour since the booking confirmation after the system gave the possibility to the user to unlock car doors. In this case the user can't unlock car doors because the system has already cancelled automatically booking.  
-			\end{itemize}
-	\end{labeling}
-	
+	\item[\textbf{Name}] Unlock car doors
+	\item[\textbf{Actors}] User
+	\item[\textbf{Entry conditions}] The user must have booked a car.
+	\item[\textbf{Flow of events}]
+		\begin{itemize}
+			\item[]
+			\item The user is notified by the system that he's near enough to the booked car to unlock its doors
+			\item The user clicks on the button to unlock the booked car
+			\item The system unlocks car doors
+		\end{itemize}
+	\item[\textbf{Exit conditions}] The user successfully unlocks car doors.
+	\item[\textbf{Exceptions}]
+		\begin{itemize}
+			\item[]
+			\item It passed an hour since the booking confirmation after the system gave the possibility to the user to unlock car doors. In this case the user can't unlock car doors because the system has already cancelled automatically booking.  
+		\end{itemize}
+\end{labeling}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{sequence-diagrams/open-car}
+	\caption[Sequence diagram - Unlock car doors]{The sequence diagram above describes the car doors unlocking procedure.}
+	\label{fig:open-car-sequence-diagram}
+\end{figure}
+\clearpage
+
 \subsection{Use case description 9 - Begin rental}
 \begin{labeling}{use-case-desc-9}
-		\item[\textbf{Name}] Begin rental
-		\item[\textbf{Actors}] User
-		\item[\textbf{Entry conditions}] The user must have unlocked car doors.
-		\item[\textbf{Flow of events}]
-			\begin{itemize}
-				\item[]
-				\item The user inserts the PIN provided at the moment of registration on the onboard computer of the car.
-				\item The user ignites the engine.
-			\end{itemize}
-		\item[\textbf{Exit conditions}] The user starts driving the car.
-		\item[\textbf{Exceptions}]
-			\begin{itemize}
-				\item[]
-				\item The PIN inserted by the user is not correct. In this case the system doesn't allow the usere to ignite the engine until he inserts the correct PIN. 
-			\end{itemize}
-	\end{labeling}
-	
+	\item[\textbf{Name}] Begin rental
+	\item[\textbf{Actors}] User
+	\item[\textbf{Entry conditions}] The user must have unlocked car doors.
+	\item[\textbf{Flow of events}]
+		\begin{itemize}
+			\item[]
+			\item The user inserts the PIN provided at the moment of registration on the onboard computer of the car.
+			\item The user ignites the engine.
+		\end{itemize}
+	\item[\textbf{Exit conditions}] The user starts driving the car.
+	\item[\textbf{Exceptions}]
+		\begin{itemize}
+			\item[]
+			\item The PIN inserted by the user is not correct. In this case the system doesn't allow the usere to ignite the engine until he inserts the correct PIN. 
+		\end{itemize}
+\end{labeling}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{sequence-diagrams/begin-rental}
+	\caption[Sequence diagram - Begin rental]{The sequence diagram above describes the rental beginning procedure.}
+	\label{fig:begin-rental-sequence-diagram}
+\end{figure}
+\clearpage
+
 \subsection{Use case description 10 - Get info about the ongoing rental}
 \begin{labeling}{use-case-desc-10}
-		\item[\textbf{Name}] Get info about the ongoing rental
-		\item[\textbf{Actors}] User
-		\item[\textbf{Entry conditions}] The user must have started a rental.
-		\item[\textbf{Flow of events}]
-			\begin{itemize}
-				\item[]
-				\item The user interacts with the onboard computer interface in order to get information about the ongoing rental.
-				\item The systems shows on the onboard computer the desired information.
-			\end{itemize}
-		\item[\textbf{Exit conditions}] The user successfully gets desired information about the ongoing rental. 
-		\item[\textbf{Exceptions}]
-			\begin{itemize}
-				\item[]
-				\item The car's battery runs out. In this case the onboard computer can't give any further information about the ongoing rental except the total cost of the rental reached before the battery exhausted. 
-			\end{itemize}
-	\end{labeling}
-	
+	\item[\textbf{Name}] Get info about the ongoing rental
+	\item[\textbf{Actors}] User
+	\item[\textbf{Entry conditions}] The user must have started a rental.
+	\item[\textbf{Flow of events}]
+		\begin{itemize}
+			\item[]
+			\item The user interacts with the onboard computer interface in order to get information about the ongoing rental.
+			\item The systems shows on the onboard computer the desired information.
+		\end{itemize}
+	\item[\textbf{Exit conditions}] The user successfully gets desired information about the ongoing rental. 
+	\item[\textbf{Exceptions}]
+		\begin{itemize}
+			\item[]
+			\item The car's battery runs out. In this case the onboard computer can't give any further information about the ongoing rental except the total cost of the rental reached before the battery exhausted. 
+		\end{itemize}
+\end{labeling}
+
 \subsection{Use case description 11 - End rental}
 \begin{labeling}{use-case-desc-11}
-		\item[\textbf{Name}] End rental
-		\item[\textbf{Actors}] User
-		\item[\textbf{Entry conditions}] The user must have started a rental.
-		\item[\textbf{Flow of events}]
-			\begin{itemize}
-				\item[]
-				\item The user parks the car in a safe area.
-				\item The user turns off the engine.
-				\item The user and, eventually, passengers exit the car and close car doors.
-			\end{itemize}
-		\item[\textbf{Exit conditions}] The user successfully ends the rental.
-		\item[\textbf{Exceptions}]
-			\begin{itemize}
-				\item[]
-				\item The user parks the car non in a safe area. In this case the system doesn't allow the user to end the rental.
-				\item The user parks the car in a safe area but doesn't turn off the engine. In this case the system doesn't allow the user to end the rental.
-				\item The user parks the car in a safe area, turns off the engine but he/her and eventually passengers don't exit the car or close car doors. In this case the system doesn't allow the user to end the rental.  
-			\end{itemize}
-	\end{labeling}
+	\item[\textbf{Name}] End rental
+	\item[\textbf{Actors}] User
+	\item[\textbf{Entry conditions}] The user must have started a rental.
+	\item[\textbf{Flow of events}]
+		\begin{itemize}
+			\item[]
+			\item The user parks the car in a safe area.
+			\item The user turns off the engine.
+			\item The user and, eventually, passengers exit the car and close car doors.
+		\end{itemize}
+	\item[\textbf{Exit conditions}] The user successfully ends the rental.
+	\item[\textbf{Exceptions}]
+		\begin{itemize}
+			\item[]
+			\item The user parks the car non in a safe area. In this case the system doesn't allow the user to end the rental.
+			\item The user parks the car in a safe area but doesn't turn off the engine. In this case the system doesn't allow the user to end the rental.
+			\item The user parks the car in a safe area, turns off the engine but he/her and eventually passengers don't exit the car or close car doors. In this case the system doesn't allow the user to end the rental.  
+		\end{itemize}
+\end{labeling}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{sequence-diagrams/end-rental}
+	\caption[Sequence diagram - End rental]{The sequence diagram above describes the rental ending procedure.}
+	\label{fig:end-rental-sequence-diagram}
+\end{figure}
+\clearpage
