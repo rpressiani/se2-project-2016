@@ -1,0 +1,20 @@
+participant "User" as U
+participant "System" as S
+participant "Car" as C
+
+loop userOpenedCar == false
+S->S: userIsNear: compareUserCarLocations()
+    alt userIsNear == true
+    S->U: notifyUser()
+        alt user opens car
+        U->S: openCar()
+        activate S
+        S->C: notifyCar()
+        activate C
+        C->S: doorsOpened()
+        deactivate C
+        S->U: userOpenedCar = confirmCarOpened() : true
+        deactivate S
+        end
+    end
+end
