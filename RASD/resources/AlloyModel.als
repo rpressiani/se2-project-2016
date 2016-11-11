@@ -7,7 +7,7 @@ sig Position{
 
 sig Car{
 		IDCar : Int,
-		status : String,
+		status : Status,
 		batteryLevel : Int,
 		engineLock : Bool, 
 		engineStatus: Bool,
@@ -19,6 +19,7 @@ sig Car{
 }{
 		IDCar>0
 		batteryLevel >= 0 && batteryLevel <=100
+		activeSeats>=0 && activeSeats<=5
 }	
 
 sig User{
@@ -30,9 +31,15 @@ sig User{
 		creditCard : String,
 		email : String,
 		password : String,
-		PIN : Int,
+		PIN : String,
 		position : Position,
 }
+
+abstract sig Status{}
+sig Available extends Status{}
+sig InUse extends Status{}
+sig Reserved extends Status{}
+sig Unavailable extends Status{}
 
 fact DifferentCars{
 		all c1,c2: Car | (c1 != c2) => (c1.IDCar != c2.IDCar) && (c1.position != c2.position)		
