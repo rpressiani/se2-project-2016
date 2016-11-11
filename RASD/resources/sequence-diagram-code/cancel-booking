@@ -1,14 +1,14 @@
 participant "User" as U
 participant "System" as S
-participant "Billing service" as B
+participant "Payment service" as P
 
 alt elapsedBookingTime > 1h
 S->S: cancelBooking()
 activate S
-S->B: chargeUser()
-activate B
-B->S: confirmPayment()
-deactivate B
+S->P: chargeUser()
+activate P
+P->S: confirmPayment()
+deactivate P
 S->U: notifyUser()
 deactivate S
 else user cancels booking
