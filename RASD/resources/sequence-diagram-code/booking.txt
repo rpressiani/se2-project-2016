@@ -1,0 +1,24 @@
+participant "User" as U
+participant "System" as S
+
+loop while carBooked == false
+    U->S: clickOnCar()
+    activate S
+    S->U: sendCarInfo()
+    deactivate S
+    
+    alt user books the car selected
+    U->S: confirmBooking()
+    S->S: carIsAvailable = checkCarAvailability()
+    S->S: ongoingBooking = checkOngoingBooking()
+    activate S
+    
+    alt carIsAvailable && !ongoingBooking
+    S->U: carBooked = sendResponse() : true
+    else
+    S->U: carBooked = sendResponse() : false
+    end
+    deactivate S
+    else
+    U->U: exitBookingScreen()
+end
