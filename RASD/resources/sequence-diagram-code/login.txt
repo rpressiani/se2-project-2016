@@ -1,0 +1,15 @@
+participant "User" as U
+participant "System" as S
+
+loop while login == false
+    U->U: fillForm(username, password)
+    U->S: sendLogin(form)
+    activate S
+    
+    alt credentials correct
+    S->U: login = response(validLogin) : true
+    else wrong username or password
+    S->U: login = response(validLogin) : false
+    deactivate S
+    end
+end
