@@ -1,0 +1,25 @@
+participant "User" as U
+participant "Car" as C
+participant "System" as S
+
+loop pinIsCorrect == false
+U->C: sendPIN()
+activate C
+C->S: checkPIN()
+activate S
+S->C: pinIsCorrect = pinCheckResponse()
+deactivate S
+    alt pinIsCorrect == true
+    C->C: enableIgnition()
+    C->U: notifyCorrectPIN()
+    else pinIsCorrect == false
+    C->U: notifyWrongPIN()
+    end
+    deactivate C
+end
+
+alt user ignites engine
+C->S: engineIgnited()
+activate S
+S->S: startRental()
+deactivate S
