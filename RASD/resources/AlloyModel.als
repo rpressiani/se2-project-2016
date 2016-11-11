@@ -5,6 +5,12 @@ sig Position{
 		longitute : Int
 }
 
+abstract sig Status{}
+sig Available extends Status{}
+sig InUse extends Status{}
+sig Reserved extends Status{}
+sig Unavailable extends Status{}
+
 sig Car{
 		IDCar : Int,
 		status : Status,
@@ -32,14 +38,23 @@ sig User{
 		email : String,
 		password : String,
 		PIN : String,
-		position : Position,
+		position : Position
 }
 
-abstract sig Status{}
-sig Available extends Status{}
-sig InUse extends Status{}
-sig Reserved extends Status{}
-sig Unavailable extends Status{}
+sig Booking{
+		bookingID : Int,
+		user : User,
+		car : Car,
+		passedTime : Bool	//can't handle time difference between booking and rental
+}{
+		bookingID>0
+}
+
+sig Rental{
+		booking : Booking,
+		durationTime : Int,
+		amountToPay : Int
+}
 
 fact DifferentCars{
 		all c1,c2: Car | (c1 != c2) => (c1.IDCar != c2.IDCar) && (c1.position != c2.position)		
