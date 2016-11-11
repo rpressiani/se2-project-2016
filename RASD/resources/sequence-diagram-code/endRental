@@ -1,0 +1,35 @@
+participant "User" as U
+participant "Car" as C
+participant "System" as S
+participant "Payment service" as P
+participant "Recovery service" as R
+
+loop carIsInSafeArea == false
+C->S: engineStopped()
+activate S
+S->C: carIsInSafeArea = carLocationResponse()
+deactivate S
+activate C
+    alt carIsInSafeArea == false
+    C->U: notifyRentalNotEnded()
+    else carIsInSafeArea == true
+    C->U: notifyCorrectLocation()
+    deactivate C
+    end
+end
+C->S: doorsClosed()
+activate S
+S->S: recoveryAlert = checkRecovery()
+opt recoveryAlert == true
+S->C: setCarNotAvailable()
+S->R: sendRecoveryRequest()
+activate R
+R->S: ackRecoveryRequest()
+deactivate R
+end
+S->P: sendPaymentRequest()
+activate P
+P->S: ackPaymentRequest()
+deactivate P
+S->U: notifyRentalEnded()
+deactivateS
