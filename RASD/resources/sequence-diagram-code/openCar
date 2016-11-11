@@ -4,9 +4,9 @@ participant "Car" as C
 
 loop userOpenedCar == false
 S->S: userIsNear: compareUserCarLocations()
-    alt userIsNear == true
+    opt userIsNear == true
     S->U: notifyUser()
-        alt user opens car
+        opt user opens car
         U->S: openCar()
         activate S
         S->C: notifyCar()
