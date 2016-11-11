@@ -13,11 +13,33 @@ sig Car{
 		engineStatus: Bool,
 		doorsLock : Bool,
 		doorsStatus : Bool,
-		activeSeats : int,
+		activeSeats : Int,
 		componentsFailure : Bool,
 		position : Position
+}{
+		IDCar>0
+		batteryLevel >= 0 && batteryLevel <=100
+}	
+
+sig User{
+		name : String,
+		surname : String,
+		IDCard : String,
+		taxCode : String,
+		drivingLicense : String,
+		creditCard : String,
+		email : String,
+		password : String,
+		PIN : Int,
+		position : Position,
 }
 
+fact DifferentCars{
+		all c1,c2: Car | (c1 != c2) => (c1.IDCar != c2.IDCar) && (c1.position != c2.position)		
+		//car's id numbers are unique
+		//two different cars can't stay in the same position
+}
+}
 
 pred show{}
 run show
