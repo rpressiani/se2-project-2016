@@ -18,7 +18,7 @@ deactivate S
     deactivate C
 end
 
-alt user ignites engine
+opt user ignites engine
 C->S: engineIgnited()
 activate S
 S->S: startRental()
