@@ -39,6 +39,11 @@ fact DifferentCars{
 		//car's id numbers are unique
 		//two different cars can't stay in the same position
 }
+
+fact DifferentUsers{
+	all u1,u2: User | (u1!=u2) => (u1.IDCard != u2.IDCard) && (u1.taxCode != u2.taxCode) &&
+													 (u1.drivingLicense != u2.drivingLicense) && (u1.email != u2.email) &&
+													 (u1.PIN != u2.PIN)
 }
 
 pred show{}
