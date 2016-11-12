@@ -79,22 +79,12 @@ fact safeAreaAreUnique {
 	all s1, s2: SafeArea | (s1 != s2) => (s1.position != s2.position)
 }
 
-fact carIsUnavailable {
-	all c: Car | some s: SafeArea | (c.batteryLevel = BatteryLevelEmpty || c.componentsFailure = True || 
-													 (c.position = s.position && s.powerGrid=False && c.batteryLevel = BatteryLevelLow &&
-													  s.nearToPowerGrid = False) <=> (c.status = Unavailable))
-}
-
 fact usersAreUnique {
 	all u1, u2: User | (u1 != u2) => (u1.taxCode != u2.taxCode)
 }
 
 fact bookingsAreUnique {
 	all b1, b2: Booking | (b1 != b2) => (b1.bookingID != b2.bookingID)
-}
-
-fact carIsReserved {
-	all c: Car | some b: Booking | (b.car = c && b.ended = False) <=> (c.status = Reserved)
 }
 
 fact oneCarOneBooking {
@@ -109,8 +99,24 @@ fact oneBookingOneRental {
 	all r1, r2: Rental | (r1 != r2) => r1.booking != r2.booking
 }
 
+fact carIsAvailable {
+	all c: Car | (c.status != Reserved && c.status != InUse && c.status != Unavailable) <=> (c.status = Available)
+	//RIDONDANTE MA PER CHIAREZZA SPECIFICHIAMO TUTTI GLI STATI, AVENDO DEFINITO GLI ALTRI 3 IN MANIERA CORRETTA 
+	//QUESTO DOVREBBE ESSERE DEFINITO CORRETTAMENTE PER ESCLUSIONE
+}
+
+fact carIsReserved {
+	all c: Car | some b: Booking | (b.car = c && b.ended = False) <=> (c.status = Reserved)
+}
+
 fact carInUse{
-	all c: Car | some r: Rental, b: Booking | (r.ended=False && r.booking=b) <=> (c.status = InUse)
+	all c: Car | some r: Rental, b: Booking | (r.booking=b && r.ended=False) <=> (c.status = InUse)
+}
+
+fact carIsUnavailable {
+	all c: Car | some s: SafeArea | (c.batteryLevel = BatteryLevelEmpty || c.componentsFailure = True || 
+													 (c.position = s.position && s.powerGrid=False && c.batteryLevel = BatteryLevelLow &&
+													  s.nearToPowerGrid = False) <=> (c.status = Unavailable))
 }
  
 /* PREDS */
