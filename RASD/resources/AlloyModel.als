@@ -52,7 +52,7 @@ sig Booking {
 	user: User,
 	car: Car,
 	ended: Bool,
-	//elapsedTime: Bool,
+	elapsedTime: Bool,	//True if it passed more than hour since the user booked the car
 } {
 	bookingID > 0
 }
@@ -62,11 +62,13 @@ sig Rental {
 	ended: Bool,
 } 
 
-sig PaymentRental {
+abstract sig Payment{}
+
+sig PaymentRental extends Payment{
 	rental: Rental,
 }
 
-sig PaymentFee {
+sig PaymentFee extends Payment{
 	booking: Booking,
 }
 
@@ -104,12 +106,16 @@ fact oneUserOneBooking {
 	all b1, b2: Booking | (b1.ended = False && b2.ended = False && b1.user = b2.user) => (b1 = b2)
 }
 
+fact rentalIfNotElapsed {
+	all r: Rental | r.booking.elapsedTime = False
+}
+
 fact oneBookingOneRental {
 	all r1, r2: Rental | (r1 != r2) => r1.booking != r2.booking
 }
 
-fact existsPaymentForRental {
-	all r: Rental | (r.ended = False) => 
+fact feeIfElapsed {
+	all p: PaymentFee | p.booking.elapsedTime = True
 }
 
 fact carIsReserved {
