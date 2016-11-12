@@ -122,6 +122,14 @@ fact feeIfElapsed {
 	all p: PaymentFee | p.booking.elapsedTime = True
 }
 
+fact payIfRentalEnded {
+	all p: PaymentRental | p.rental.ended=True
+}
+
+fact oneRentalOnePayment {
+	all p1, p2: PaymentRental | (p1.rental = p2.rental) => p1=p2
+}
+
 fact alertIfUnavailable {
 	all a: RecoveryAlert | a.car.status=Unavailable
 }
