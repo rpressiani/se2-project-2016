@@ -110,7 +110,7 @@ fact carIsReserved {
 }
 
 fact carInUse{
-	all c: Car | some r: Rental, b: Booking | (r.booking=b && r.ended=False) <=> (c.status = InUse)
+	all c: Car | some r: Rental | (r.booking.car=c && r.ended=False) <=> (c.status = InUse)
 }
 
 fact carIsUnavailable {
