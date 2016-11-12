@@ -61,6 +61,15 @@ sig Rental {
 	booking: Booking,
 	ended: Bool,
 } 
+
+sig PaymentRental {
+	rental: Rental,
+}
+
+sig PaymentFee {
+	booking: Booking,
+}
+
 /* FACTS */
 
 fact carsAreUnique {
@@ -99,10 +108,8 @@ fact oneBookingOneRental {
 	all r1, r2: Rental | (r1 != r2) => r1.booking != r2.booking
 }
 
-fact carIsAvailable {
-	all c: Car | (c.status != Reserved && c.status != InUse && c.status != Unavailable) <=> (c.status = Available)
-	//RIDONDANTE MA PER CHIAREZZA SPECIFICHIAMO TUTTI GLI STATI, AVENDO DEFINITO GLI ALTRI 3 IN MANIERA CORRETTA 
-	//QUESTO DOVREBBE ESSERE DEFINITO CORRETTAMENTE PER ESCLUSIONE
+fact existsPaymentForRental {
+	all r: Rental | (r.ended = False) => 
 }
 
 fact carIsReserved {
