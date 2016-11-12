@@ -122,12 +122,28 @@ fact feeIfElapsed {
 	all p: PaymentFee | p.booking.elapsedTime = True
 }
 
+fact endBookingIfElapsed {
+	all p: PaymentFee | p.booking.ended = True
+}
+
 fact payIfRentalEnded {
 	all p: PaymentRental | p.rental.ended=True
 }
 
+fact endBookingIfEndRental {
+	all r: Rental | (r.ended = True) => r.booking.ended = True
+}
+
 fact oneRentalOnePayment {
 	all p1, p2: PaymentRental | (p1.rental = p2.rental) => p1=p2
+}
+
+fact endBookingIfUnavailable {
+	all c: Car | some b: Booking | (b.car = c && c.status = Unavailable) => b.ended = True
+}
+
+fact endRentalIfUnavailable {
+	all c: Car | some r: Rental | some b: Booking | (r.booking = b && b.car = c && c.status = Unavailable) => r.ended = True
 }
 
 fact alertIfUnavailable {
@@ -139,13 +155,13 @@ fact carIsReserved {
 }
 
 fact carInUse{
-	all c: Car | some r: Rental | (r.booking.car=c && r.ended=False) <=> (c.status = InUse)
+	all c: Car | some r: Rental | some b: Booking | (r.booking=b && r.booking.car=c && r.ended=False) <=> (c.status = InUse)
 }
 
 fact carIsUnavailable {
 	all c: Car | some s: SafeArea | (c.batteryLevel = BatteryLevelEmpty || c.componentsFailure = True || 
 													 (c.position = s.position && s.powerGrid=False && c.batteryLevel = BatteryLevelLow &&
-													  s.nearToPowerGrid = False) <=> (c.status = Unavailable))
+													  s.nearToPowerGrid = False)) <=> (c.status = Unavailable)
 }
  
 /* PREDS */
