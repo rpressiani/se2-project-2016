@@ -2,7 +2,7 @@ open util/boolean
 
 abstract sig CarStatus{}
 one sig Available extends CarStatus{}
-//one sig InUse extends CarStatus{}
+one sig InUse extends CarStatus{}
 one sig Reserved extends CarStatus{}
 one sig Unavailable extends CarStatus{}
 
@@ -25,8 +25,7 @@ sig Car {
 	doorsStatus : Bool,*/
 } {
 	IDCar > 0
-	activeSeats > 0
-	activeSeats <= 5
+	activeSeats > 0 && activeSeats <= 5
 }
 
 sig Position {
@@ -56,6 +55,10 @@ sig Booking {
 	bookingID > 0
 }
 
+sig Rental {
+	booking: Booking,
+	ended: Bool,
+} 
 /* FACTS */
 
 fact carsAreUnique {
@@ -75,7 +78,7 @@ fact safeAreaAreUnique {
 }
 
 fact carIsUnavailable {
-	all c: Car | some s: SafeArea | (c.batteryLevel = BatteryLevelEmpty || c.componentsFailure = True || (c.position = s.position && c.batteryLevel = BatteryLevelLow)) iff (c.status = Unavailable)
+	all c: Car | some s: SafeArea | (c.batteryLevel = BatteryLevelEmpty || c.componentsFailure = True || (c.position = s.position && s.powerGrid=False && c.batteryLevel = BatteryLevelLow)) <=> (c.status = Unavailable)
 }
 
 fact usersAreUnique {
@@ -87,7 +90,7 @@ fact bookingsAreUnique {
 }
 
 fact carIsReserved {
-	all c: Car | some b: Booking | (b.car = c && b.ended = False) iff (c.status = Reserved)
+	all c: Car | some b: Booking | (b.car = c && b.ended = False) <=> (c.status = Reserved)
 }
 
 fact oneCarOneBooking {
@@ -98,6 +101,14 @@ fact oneUserOneBooking {
 	all b1, b2: Booking | (b1.ended = False && b2.ended = False && b1.user = b2.user) => (b1 = b2)
 }
 
+fact oneBookingOneRental {
+	all r1, r2: Rental | (r1 != r2) => r1.booking != r2.booking
+}
+
+fact carInUse{
+	all c: Car | some r: Rental, b: Booking | (r.ended=False && r.booking=b) <=> (c.status = InUse)
+}
+ 
 /* PREDS */
 
 pred show {
