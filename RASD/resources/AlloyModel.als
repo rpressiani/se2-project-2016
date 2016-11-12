@@ -35,7 +35,9 @@ sig Position {
 
 sig SafeArea {
 	position: Position,
-	powerGrid: Bool,	
+	powerGrid: Bool,
+	nearToPowerGrid: Bool,	//boolean that indicates if there is at least one safe area with power grid
+											// in 3km range from the considered safe area
 }
 
 sig TaxCode {}
@@ -78,7 +80,9 @@ fact safeAreaAreUnique {
 }
 
 fact carIsUnavailable {
-	all c: Car | some s: SafeArea | (c.batteryLevel = BatteryLevelEmpty || c.componentsFailure = True || (c.position = s.position && s.powerGrid=False && c.batteryLevel = BatteryLevelLow)) <=> (c.status = Unavailable)
+	all c: Car | some s: SafeArea | (c.batteryLevel = BatteryLevelEmpty || c.componentsFailure = True || 
+													 (c.position = s.position && s.powerGrid=False && c.batteryLevel = BatteryLevelLow &&
+													  s.nearToPowerGrid = False) <=> (c.status = Unavailable))
 }
 
 fact usersAreUnique {
