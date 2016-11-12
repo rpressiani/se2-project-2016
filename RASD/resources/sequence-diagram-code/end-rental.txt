@@ -1,6 +1,6 @@
 participant "User" as U
 participant "Car" as C
-participant "System" as S
+participant "Back end" as S
 participant "Payment service" as P
 participant "Recovery service" as R
 
