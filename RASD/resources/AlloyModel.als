@@ -62,14 +62,18 @@ sig Rental {
 	ended: Bool,
 } 
 
-abstract sig Payment{}
+abstract sig Payment {}
 
-sig PaymentRental extends Payment{
+sig PaymentRental extends Payment {
 	rental: Rental,
 }
 
-sig PaymentFee extends Payment{
+sig PaymentFee extends Payment {
 	booking: Booking,
+}
+
+sig RecoveryAlert {
+	car: Car,
 }
 
 /* FACTS */
@@ -116,6 +120,10 @@ fact oneBookingOneRental {
 
 fact feeIfElapsed {
 	all p: PaymentFee | p.booking.elapsedTime = True
+}
+
+fact alertIfUnavailable {
+	all a: RecoveryAlert | a.car.status=Unavailable
 }
 
 fact carIsReserved {
