@@ -1,5 +1,5 @@
 participant "User" as U
-participant "System" as S
+participant "Back end" as S
 
 loop while carBooked == false
     U->S: clickOnCar()

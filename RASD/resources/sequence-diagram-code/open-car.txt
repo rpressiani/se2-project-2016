@@ -1,5 +1,5 @@
 participant "User" as U
-participant "System" as S
+participant "Back end" as S
 participant "Car" as C
 
 loop userOpenedCar == false
