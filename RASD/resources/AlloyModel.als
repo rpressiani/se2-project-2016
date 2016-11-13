@@ -147,10 +147,10 @@ fact endRentalIfUnavailable {
 }
 
 fact alertIffUnavailable {
-	some a: RecoveryAlert | all c: Car | (c.status = Unavailable) <=> (a.car = c)
+	all c: Car |	some a: RecoveryAlert | (c.status = Unavailable) <=> (a.car = c)
 }
 
-fact unicityAlert {
+fact alertsAreUnique {
 	all a1, a2: RecoveryAlert | (a1!=a2) => (a1.car!=a2.car)
 }
 
@@ -170,11 +170,9 @@ fact carIsUnavailable {
  
 /* PREDS */
 
-pred showUnicityAlert {
-	some r1, r2: RecoveryAlert | some c: Car | (r1.car=c && r2.car=c && r1!=r2)
-}
+pred show {}
 
-run showUnicityAlert
+run show
 
 /* ASSERT */
 
@@ -186,7 +184,7 @@ assert noRentalActiveIfCarUnavailable {
 	all c: Car | some r: Rental | some b: Booking | (c.status=Unavailable && r.booking=b && b.car=c) => (r.ended=True) 
 }
 
-assert alertIfCarUnavailable {
+assert singleAlertIfCarUnavailable {
 	all c: Car | (c.status=Unavailable) => one r: RecoveryAlert | (r.car=c)
 }
 
