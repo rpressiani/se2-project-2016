@@ -126,6 +126,14 @@ fact endBookingIfElapsed {
 	all p: PaymentFee | p.booking.ended = True
 }
 
+fact paymentFeeAreUnique {
+	all p1, p2: PaymentFee | (p1 != p2) => (p1.booking != p2.booking)
+}
+
+fact paymentRentalAreUnique {
+	all p1, p2: PaymentRental | (p1 != p2) => (p1.rental != p2.rental)
+}
+
 fact payIfRentalEnded {
 	all p: PaymentRental | p.rental.ended=True
 }
