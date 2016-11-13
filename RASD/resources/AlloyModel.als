@@ -180,6 +180,10 @@ assert noActiveBookingIfRentalEnded {
 	all r: Rental | (r.ended=True) => no b: Booking | (r.booking=b && b.ended=False)
 }
 
+assert paymentIfRentalEnded {
+	all p: PaymentRental | all r: Rental | (p.rental = r) =>  (r.ended = True)
+}
+
 assert noRentalActiveIfCarUnavailable {
 	all c: Car | some r: Rental | some b: Booking | (c.status=Unavailable && r.booking=b && b.car=c) => (r.ended=True) 
 }
@@ -189,5 +193,6 @@ assert singleAlertIfCarUnavailable {
 }
 
 check noRentalActiveIfCarUnavailable
-check alertIfCarUnavailable
+check paymentIfRentalEnded
+check singleAlertIfCarUnavailable
 check noActiveBookingIfRentalEnded
