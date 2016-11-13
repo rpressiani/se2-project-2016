@@ -3,11 +3,11 @@ If a car is not picked up within one hour from the booking the reservation expir
 
 \setcounter{secnumdepth}{3}
 \subsubsection{Functional requirement 8.1}
-When the user books a car, a stopwatch starts: if one hour has passed and no rental, related to that booking, has been created, then the booking expires.\\~\\
-\noindent Domain assumptions required: [A15]
+When the user books a car, a stopwatch starts: if one hour has passed and no rental, related to that booking, has been created, then the booking expires.
 
 \subsubsection{Functional requirement 8.2}
- the system tags the car as AVAILABLE.
+If the booking has expired, the system tags the car as AVAILABLE.
 
 \subsubsection{Functional requirement 8.3}
- If the booking has expired, the system charges the user a fee of 1 EUR.
+ If the booking has expired, the system charges the user a fee of 1 EUR.\\~\\
+\noindent Domain assumptions required: [A15]
