@@ -19,10 +19,6 @@ sig Car {
 	status : CarStatus,
 	batteryLevel : BatteryLevel,
 	componentsFailure : Bool,
-	/*engineLock : Bool, 
-	engineStatus: Bool,
-	doorsLock : Bool,
-	doorsStatus : Bool,*/
 } {
 	IDCar > 0
 	activeSeats > 0 && activeSeats <= 5
@@ -167,11 +163,32 @@ fact carIsUnavailable {
 													 (c.position = s.position && s.powerGrid=False && c.batteryLevel = BatteryLevelLow &&
 													  s.nearToPowerGrid = False)) <=> (c.status = Unavailable)
 }
+
  
 /* PREDS */
 
-pred show {}
+pred show {
+	#Car > 1
+	#Booking > 1
+	#PaymentFee > 1
+	#RecoveryAlert > 1
+}
 
+pred batteryLowInSafeAreaWithNoPowerGridHasAlert {
+	some c: Car, s: SafeArea, r: RecoveryAlert | (c.batteryLevel = BatteryLevelLow && c.position = s.position && s.powerGrid = False && r.car = c && c.componentsFailure = False)
+}
+
+pred allRentalsHaveNonElapsedBooking {
+	some r: Rental, b: Booking | (r.booking = b && b.elapsedTime = False)
+}
+
+pred bookingsElapsedHaveFeePayments {
+	some b: Booking, p: PaymentFee | (b.elapsedTime = True && p.booking = b)
+}
+
+run allRentalsHaveNonElapsedBooking
+run bookingsElapsedHaveFeePayments
+run batteryLowInSafeAreaWithNoPowerGridHasAlert
 run show
 
 /* ASSERT */
@@ -189,5 +206,5 @@ assert singleAlertIfCarUnavailable {
 }
 
 check noRentalActiveIfCarUnavailable
-check alertIfCarUnavailable
+check singleAlertIfCarUnavailable
 check noActiveBookingIfRentalEnded
