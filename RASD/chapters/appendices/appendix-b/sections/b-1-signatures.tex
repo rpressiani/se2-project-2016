@@ -1,0 +1,81 @@
+\section{Signatures}
+
+\lstset{language=alloy}
+
+\begin{lstlisting}
+open util/boolean
+
+abstract sig CarStatus{}
+one sig Available extends CarStatus{}
+one sig InUse extends CarStatus{}
+one sig Reserved extends CarStatus{}
+one sig Unavailable extends CarStatus{}
+
+abstract sig BatteryLevel{}
+one sig BatteryLevelHigh extends BatteryLevel{}		// 100% -> 50%
+one sig BatteryLevelMid extends BatteryLevel{}		// 49% -> 20%
+one sig BatteryLevelLow extends BatteryLevel{}		// 19% -> 1%
+one sig BatteryLevelEmpty extends BatteryLevel{}	// 0%
+
+sig Car {
+	IDCar : Int,
+	activeSeats : Int,
+	position : Position,
+	status : CarStatus,
+	batteryLevel : BatteryLevel,
+	componentsFailure : Bool,
+} {
+	IDCar > 0
+	activeSeats > 0 && activeSeats <= 5
+}
+
+sig Position {
+	latitude: Int,
+	longitude: Int,
+}
+
+sig SafeArea {
+	position: Position,
+	powerGrid: Bool,
+	nearToPowerGrid: Bool,	// boolean that indicates if there is at least
+							// one safe area with power grid in 3km range
+							// from the considered safe area
+}
+
+sig TaxCode {}
+
+sig User {
+	taxCode: TaxCode,
+	position: Position,
+}
+
+sig Booking {
+	bookingID: Int,
+	user: User,
+	car: Car,
+	ended: Bool,
+	elapsedTime: Bool,	// True if it passed more than hour
+						// since the user booked the car
+} {
+	bookingID > 0
+}
+
+sig Rental {
+	booking: Booking,
+	ended: Bool,
+} 
+
+abstract sig Payment {}
+
+sig PaymentRental extends Payment {
+	rental: Rental,
+}
+
+sig PaymentFee extends Payment {
+	booking: Booking,
+}
+
+sig RecoveryAlert {
+	car: Car,
+}
+\end{lstlisting}
