@@ -146,8 +146,12 @@ fact endRentalIfUnavailable {
 	all c: Car | some r: Rental | some b: Booking | (r.booking = b && b.car = c && c.status = Unavailable) => r.ended = True
 }
 
-fact alertIfUnavailable {
-	all c: Car | c.status=Unavailable <=> one r: RecoveryAlert | r.car=c
+fact alertIffUnavailable {
+	some a: RecoveryAlert | all c: Car | (c.status = Unavailable) <=> (a.car = c)
+}
+
+fact unicityAlert {
+	all a1, a2: RecoveryAlert | (a1!=a2) => (a1.car!=a2.car)
 }
 
 fact carIsReserved {
@@ -167,12 +171,9 @@ fact carIsUnavailable {
 /* PREDS */
 
 pred showUnicityAlert {
-	//some c: Car, s: SafeArea | (c.batteryLevel = BatteryLevelLow && c.position = s.position)
-	//some c: Car, b: Booking | (b.car != c)
-	//	all c: Car | c.status = Unavailable && c.batteryLevel != BatteryLevelEmpty && c.componentsFailure != True
-	//#SafeArea > 1
-	all r1, r2: RecoveryAlert | some c: Car | (r1.car=c && r2.car=c && r1!=r2)
+	some r1, r2: RecoveryAlert | some c: Car | (r1.car=c && r2.car=c && r1!=r2)
 }
+
 run showUnicityAlert
 
 /* ASSERT */
