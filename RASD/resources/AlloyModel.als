@@ -122,6 +122,14 @@ fact endBookingIfElapsed {
 	all p: PaymentFee | p.booking.ended = True
 }
 
+fact paymentFeeAreUnique {
+	all p1, p2: PaymentFee | (p1 != p2) => (p1.booking != p2.booking)
+}
+
+fact paymentRentalAreUnique {
+	all p1, p2: PaymentRental | (p1 != p2) => (p1.rental != p2.rental)
+}
+
 fact payIfRentalEnded {
 	all p: PaymentRental | p.rental.ended=True
 }
@@ -197,6 +205,10 @@ assert noActiveBookingIfRentalEnded {
 	all r: Rental | (r.ended=True) => no b: Booking | (r.booking=b && b.ended=False)
 }
 
+assert paymentIfRentalEnded {
+	all p: PaymentRental | all r: Rental | (p.rental = r) =>  (r.ended = True)
+}
+
 assert noRentalActiveIfCarUnavailable {
 	all c: Car | some r: Rental | some b: Booking | (c.status=Unavailable && r.booking=b && b.car=c) => (r.ended=True) 
 }
@@ -206,5 +218,6 @@ assert singleAlertIfCarUnavailable {
 }
 
 check noRentalActiveIfCarUnavailable
+check paymentIfRentalEnded
 check singleAlertIfCarUnavailable
 check noActiveBookingIfRentalEnded
