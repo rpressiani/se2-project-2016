@@ -1,0 +1,23 @@
+\section{Commands and results}
+
+\lstset{language=alloy}
+
+\begin{lstlisting}
+run show
+run allRentalsHaveNonElapsedBooking
+run bookingsElapsedHaveFeePayments
+run batteryLowInSafeAreaWithNoPowerGridHasAlert
+
+
+check noRentalActiveIfCarUnavailable
+check paymentIfRentalEnded
+check singleAlertIfCarUnavailable
+check noActiveBookingIfRentalEnded
+\end{lstlisting}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{alloy-results}
+	\caption[Alloy results]{The image above is a screenshot of the Alloy Analyzer 4.2 console that successfully confirms all the commands executed.}
+	\label{fig:alloy-results}
+\end{figure}

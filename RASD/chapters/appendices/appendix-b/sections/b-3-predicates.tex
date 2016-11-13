@@ -1,1 +1,31 @@
 \section{Predicates}
+
+\lstset{language=alloy}
+
+\begin{lstlisting}
+pred show {
+	#Car > 1
+	#Booking > 1
+	#PaymentFee > 1
+	#RecoveryAlert > 1
+}
+
+pred batteryLowInSafeAreaWithNoPowerGridHasAlert {
+	some c: Car, s: SafeArea, r: RecoveryAlert |
+		(
+			c.batteryLevel = BatteryLevelLow &&
+			c.position = s.position && s.powerGrid = False &&
+			r.car = c &&
+			c.componentsFailure = False
+		)
+}
+
+pred allRentalsHaveNonElapsedBooking {
+	some r: Rental, b: Booking | (r.booking = b && b.elapsedTime = False)
+}
+
+pred bookingsElapsedHaveFeePayments {
+	some b: Booking, p: PaymentFee |
+		(b.elapsedTime = True && p.booking = b)
+}
+\end{lstlisting}

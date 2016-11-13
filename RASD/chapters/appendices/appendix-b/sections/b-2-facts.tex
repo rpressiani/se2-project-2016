@@ -57,6 +57,14 @@ fact endBookingIfElapsed {
 	all p: PaymentFee | p.booking.ended = True
 }
 
+fact paymentFeeAreUnique {
+	all p1, p2: PaymentFee | (p1 != p2) => (p1.booking != p2.booking)
+}
+
+fact paymentRentalAreUnique {
+	all p1, p2: PaymentRental | (p1 != p2) => (p1.rental != p2.rental)
+}
+
 fact payIfRentalEnded {
 	all p: PaymentRental | p.rental.ended=True
 }
@@ -79,14 +87,20 @@ fact endRentalIfUnavailable {
 		(r.booking = b && b.car = c && c.status = Unavailable) => r.ended = True
 }
 
-fact alertIfUnavailable {
-	all a: RecoveryAlert | a.car.status=Unavailable
+fact alertIffUnavailable {
+	all c: Car |	some a: RecoveryAlert | (c.status = Unavailable) <=> (a.car = c)
+}
+
+fact alertsAreUnique {
+	all a1, a2: RecoveryAlert | (a1!=a2) => (a1.car!=a2.car)
 }
 
 fact carIsReserved {
 	all c: Car | some b: Booking |
 		(b.car = c && b.ended = False) <=> (c.status = Reserved)
 }
+
+
 
 fact carInUse{
 	all c: Car | some r: Rental | some b: Booking |
