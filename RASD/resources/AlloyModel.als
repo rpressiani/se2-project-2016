@@ -151,7 +151,7 @@ fact endRentalIfUnavailable {
 }
 
 fact alertIffUnavailable {
-	all c: Car |	some a: RecoveryAlert | (c.status = Unavailable) <=> (a.car = c)
+	all c: Car | (c.status = Unavailable) <=> some a: RecoveryAlert | (a.car = c)
 }
 
 fact alertsAreUnique {
