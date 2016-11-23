@@ -1,0 +1,78 @@
+\documentclass{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[nottoc]{tocbibind}
+\usepackage{vhistory}
+\usepackage[ampersand]{easylist}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{scrextend}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[titletoc]{appendix}
+\usepackage{float}
+\usepackage{blindtext}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tabto} \NumTabs{3}
+
+\graphicspath{ {img/} }
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.5\textwidth]{polimi-logo}\par\vspace{1cm}
+	{\scshape\LARGE Politecnico di Milano\par}
+	\vspace{1cm}
+	{\scshape\Large Software Engineering 2 project\par}
+	\vspace{1.5cm}
+	{\Huge\bfseries PowerEnJoy\par}
+	\vspace{0.5cm}
+	{\Large\bfseries Design Document\par}
+	\vspace{2cm}
+	\begin{multicols}{2}
+		{\Large\itshape Matteo Penco\par}
+		\vspace{0.25cm}
+		mat. 875740
+		\vfill\columnbreak
+		{\Large\itshape Riccardo Pressiani\par}
+		\vspace{0.25cm}
+		mat. 874948
+	\end{multicols}
+	
+	\vfill
+	
+	{\Large Version 0.1 draft\par}
+	\vspace{1.25cm}
+	{\large \today\par}
+\end{titlepage}
+
+\begin{versionhistory}
+  \vhEntry{0.1}{26.10.16}{RP}{Document created}
+\end{versionhistory}
+
+\vspace{5cm}
+{\noindent\Huge\bfseries Hours of work\par}
+\vspace{0.5cm}
+{\noindent Matteo Penco	\tab{???}\par}
+{\noindent Riccardo Pressiani \tab{???}\par}
+
+\tableofcontents
+
+%Add chapters
+
+% \begin{appendices}
+	
+% \end{appendices}
+
+\listoffigures
+\begingroup
+\let\clearpage\relax
+%\listoftables
+\endgroup
+
+\bibliographystyle{unsrt}
+\bibliography{ref}
+
+\end{document}
