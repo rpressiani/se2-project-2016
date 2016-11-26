@@ -15,6 +15,9 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{tabto} \NumTabs{3}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xspace}
 
 \input {resources/alloyListing}
 
@@ -45,22 +48,29 @@
 	
 	\vfill
 	
-	{\Large Version 1.0.1 approved\par}
+	{\Large Version 1.1 approved\par}
 	\vspace{1.25cm}
 	{\large \today\par}
 \end{titlepage}
 
 \begin{versionhistory}
-  \vhEntry{0.1}{26.10.16}{RP}{Document created}
-  \vhEntry{1.0}{13.11.16}{RP and MP}{Document approved}
-  \vhEntry{1.0.1}{14.11.16}{RP and MP}{Fix bug in Alloy model}
+	\vhEntry{0.1}{26.10.16}{RP}{Document created}
+ 	\vhEntry{1.0}{13.11.16}{RP and MP}{Document approved}
+ 	\vhEntry{1.0.1}{14.11.16}{RP and MP}{Fix bug in Alloy model}
+ 	\vhEntry{1.1}{--.--.16}{RP and MP}{{Several fixes \par}
+		\begin{tabular}[t]{@{\textendash\xspace}p{5.825cm}}
+			Fix front page \\
+			Fix Use Case Model
+		\end{tabular}
+ 	}
 \end{versionhistory}
+\vfill
 
-\vspace{5cm}
 {\noindent\Huge\bfseries Hours of work\par}
 \vspace{0.5cm}
 {\noindent Matteo Penco	\tab{35h}\par}
 {\noindent Riccardo Pressiani \tab{35h}\par}
+\vspace{4cm}
 
 \tableofcontents
 
