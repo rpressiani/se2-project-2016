@@ -1,6 +1,6 @@
 participant "Client" as C
 participant "Router" as R
-participant "User Manager" as U
+participant "User controller" as U
 participant "Database" as D
 
 loop while login == false
