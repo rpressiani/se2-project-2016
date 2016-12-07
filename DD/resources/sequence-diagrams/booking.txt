@@ -1,0 +1,44 @@
+participant "Client" as C
+participant "Router" as R
+participant "Car controller" as CC
+participant "Booking controller" as BC
+participant "Database" as DB
+
+loop while carBooked == false
+    C->R: getCarDetails(car)
+    activate C
+    activate R
+    R->CC: routeRequest(carDetailsRequest)
+    deactivate R
+    activate CC
+    CC->DB: car = getCar(carSQLRequest) : Car
+    activate DB
+    DB-->CC:
+    deactivate DB
+    CC->R: response(car)
+    deactivate CC
+    activate R
+    R-->C:
+    deactivate R
+    deactivate C
+    
+    opt
+        C->R: confirmBooking(car)
+        activate C
+        activate R
+        R->BC: routeRequest(createBookingRequest)
+        deactivate R
+        activate BC
+        BC->BC: createBooking(car)
+        BC->CC: updateCarStatus(car)
+        activate CC
+        CC-->BC:
+        deactivate CC
+        BC->R: response(carBooked): true
+        deactivate BC
+        activate R
+        R-->C:
+        deactivate R
+        deactivate C
+    end
+end
