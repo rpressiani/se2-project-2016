@@ -1,0 +1,40 @@
+participant "Client" as C
+participant "Onboard computer" as O
+participant "Router" as R
+participant "Car controller" as CC
+participant "Notification helper" as N
+participant "Push gateway" as P
+
+loop while isUserNearCar == false
+    C->C: checkUserPosition(user, car) : boolean
+    end
+C->R: unlockCar(car)
+activate C
+activate R
+R->CC: routeRequest(unlockCarRequest)
+deactivate R
+activate CC
+CC->N: notifyUnlockCar(car)
+activate N
+N->P: pushNotification(car, unlock)
+activate P
+
+P->O: push(unlock)
+activate O
+O->O: unlockDoors()
+P-->N:
+deactivate P
+N-->CC:
+deactivate N
+O->R: confirmUnlock(car)
+deactivate O
+activate R
+R->CC: routeRequest(confirmUnlockRequest)
+deactivate R
+CC->R: response(carInfo)
+deactivate CC
+activate R
+R-->C:
+deactivate R
+C->C: showSuccess(carInfo)
+deactivate C
