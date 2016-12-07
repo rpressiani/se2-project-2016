@@ -37,7 +37,7 @@ end
 
 O->R: startEngine()
 activate R
-R->BC: routeRequest(startRental)
+R->BC: routeRequest(startRentalRequest)
 deactivate R
 activate BC
 BC->RC: startRental()
