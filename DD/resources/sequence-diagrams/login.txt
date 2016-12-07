@@ -16,13 +16,12 @@ loop while login == false
     D-->U:
     deactivate D
     alt user.isEmpty() == true
-        U->U: login = checkCredentials(user) : true
+        U->R: response(login) : false
+        activate R
         else else
-        U->U: login = checkCredentials(user) : false
+        U->R: response(login) : true
     end
-    U->R: response(login)
     deactivate U
-    activate R
     R-->C:
     deactivate R
     alt login == true
