@@ -1,0 +1,76 @@
+participant "Onboard Computer" as O
+participant "Router" as R
+participant "CarController" as CC
+participant "MapController" as MC
+participant "RentalController" as RC
+participant "RecoveryController" as REC
+participant "PaymentController" as PC
+participant "NotificationHelper" as NOT
+participant "Push gateway" as PG
+
+O->R: isCarInSafeArea = checkCarPosition()
+activate O
+activate R
+R->CC: routeRequest(carPositionRequest)
+deactivate R
+activate CC
+CC->MC: isCarInSafeArea = checkCarInSafeArea(carPosition)
+activate MC
+MC-->CC:
+deactivate MC
+
+CC->R: response(isCarInSafeArea)
+deactivate CC
+activate R
+R-->O:
+deactivateR
+
+alt isCarInSafeArea == false
+    O->O: showFail()
+    else else
+    loop while endRentalConditions == false
+        O->O: endRentalConditions = checkCarStatus()
+    end
+    O->R: endRental(carStatus)
+    activate R
+    R->RC: routeRequest(endRentalRequest, carStatus)
+    deactivate R
+    activate RC
+    RC->CC: update(carStatus) : available
+    activate CC
+    CC-->RC:
+    deactivate CC
+    opt carStatus.recovery == true
+        RC->REC: recover(carStatus)
+        activate REC
+        REC->NOT: notifyRecoveryService(carStatus)
+        activate NOT
+        NOT->PG: pushNotification(recovery, carStatus)
+        activate PG
+        PG-->NOT:
+        deactivate PG
+        NOT-->REC:
+        deactivate NOT
+        REC-->RC:
+        deactivate REC
+    end
+    RC->PC: createPayment(rentalInfo)
+    activate PC
+    PC->NOT: notifyPaymentService(bill)
+    activate NOT
+    NOT->PG: pushNotification(payment, bill)
+    activate PG
+    PG-->NOT:
+    deactivate PG
+    NOT-->PC:
+    deactivate NOT
+    PC-->RC:
+    deactivate PC
+    RC->R: response(rentalInfo)
+    deactivate RC
+    activate R
+    R-->O:
+    deactivate R
+    O->O: showInfo(rentalInfo)
+    deactivate O
+end

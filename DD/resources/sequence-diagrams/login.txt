@@ -1,0 +1,33 @@
+participant "Client" as C
+participant "Router" as R
+participant "UserController" as U
+participant "Database" as D
+
+loop while login == false
+    C->C: fillForm(username, password)
+    C->R: login = sendLogin(form)
+    activate C
+    activate R
+    R->U: routeRequest(loginRequest)
+    deactivate R
+    activate U
+    U->D: user = getUser(userSQLRequest) : User
+    activate D
+    D-->U:
+    deactivate D
+    alt user.isEmpty() == true
+        U->R: response(login) : false
+        activate R
+        else else
+        U->R: response(login) : true
+    end
+    deactivate U
+    R-->C:
+    deactivate R
+    alt login == true
+        C->C: showSuccess()
+        else else
+        C->C: showError()
+        deactivate C
+    end
+end

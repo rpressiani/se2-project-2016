@@ -1,1 +1,115 @@
 \chapter{Requirements Traceability}
+
+\begin{itemize}
+	\item[{[G1]}] User is able to register in the system.
+		\begin{itemize}
+			\item Client app
+			\item UserController
+		\end{itemize}
+	\item[{[G2]}] User registered receives a PIN to insert in the reserved car's onboard computer in order to drive it.
+		\begin{itemize}
+			\item Client app
+			\item UserController
+			\item NotificationHelper
+			\item Push gateway
+		\end{itemize}
+	\item[{[G3]}] User is able to log in the system.
+		\begin{itemize}
+			\item Client app
+			\item UserController
+		\end{itemize}
+	\item[{[G4]}] The user is able to find the location of all the available cars near is current position or near a specified address.
+		\begin{itemize}
+			\item Client app
+			\item MapController
+			\item CarController
+		\end{itemize}
+	\item[{[G5]}] User is able to book a car for up to an hour before picking it up.
+		\begin{itemize}
+			\item Client app
+			\item CarController
+			\item BookingController
+		\end{itemize}
+	\item[{[G6]}] User is able to check the battery level of a car before booking it.
+		\begin{itemize}
+			\item Client app
+			\item CarController
+		\end{itemize}
+	\item[{[G7]}] User is able to cancel a booking of a car.
+		\begin{itemize}
+			\item Client app
+			\item BookingController
+		\end{itemize}
+	\item[{[G8]}] If a car is not picked up within one hour from the booking the reservation expires and the user pays a fee of 1 EUR.
+		\begin{itemize}
+			\item CarController
+			\item BookingController
+			\item PaymentController
+			\item NotificationHelper
+			\item Push gateway
+		\end{itemize}
+	\item[{[G9]}] User is able to open the reserved car.
+		\begin{itemize}
+			\item Client app
+			\item CarController
+			\item NotificationHelper
+			\item Push gateway
+		\end{itemize}
+	\item[{[G10]}] The user can start a rental by inserting his/her PIN and then by igniting the engine.
+		\begin{itemize}
+			\item Onboard computer
+			\item UserController
+			\item BookingController
+			\item RentalController
+			\item CarController
+		\end{itemize}
+	\item[{[G11]}] When a user is driving a car, the information about the ongoing rental is displayed by the onboard computer. The displayed information includes: the battery level of the car, the actual cost of the ongoing rental and a map that can be used as a GPS navigation device of to find both safe areas and special parking areas.
+		\begin{itemize}
+			\item Onboard computer
+			\item RentalController
+			\item CarController
+			\item MapController
+		\end{itemize}
+	\item[{[G12]}] The rental ends when the user parks in a safe area and exits the car.
+		\begin{itemize}
+			\item CarController
+			\item MapController
+			\item RentalController
+			\item RecoveryController
+			\item PaymentController
+			\item NotificationHelper
+			\item Push gateway
+		\end{itemize}
+	\item[{[G13]}] If the user shares the rented car with at least two passengers during the whole duration of the rental, he/she is eligible for a 10\% discount on the total cost of that rental.
+		\begin{itemize}
+			\item CarController
+			\item PaymentController
+		\end{itemize}
+	\item[{[G14]}] If the user leaves a car with the battery level higher than 50\%, he/she is eligible for a 20\% discount on the last ride.
+		\begin{itemize}
+			\item CarController
+			\item PaymentController
+		\end{itemize}
+	\item[{[G15]}] If the car is left within one of the special parking areas and the user takes care of plugging the car into the power grid, he/she is eligible for a 30\% discount on the last ride.
+		\begin{itemize}
+			\item CarController
+			\item MapController
+			\item PaymentController
+		\end{itemize}
+	\item[{[G16]}] If the car is left at more than 3KM from the nearest specia parking area or with the battery charge lower than 20\%, the user will pay an extra fee that will correspond to the 30\% of the cost of the last ride.
+		\begin{itemize}
+			\item CarController
+			\item MapController
+			\item PaymentController
+		\end{itemize}
+	\item[{[G17]}] In case of low battery of a parked car, damaged car or empty battery, the car becomes unavailable until is recovered by an external company in order to fix all problems, depending on the situation, written above. 
+		\begin{itemize}
+			\item CarController
+			\item MapController
+			\item RecoveryController
+			\item NotificationHelper
+			\item Push gateway
+		\end{itemize}
+\end{itemize}
+
+The Router component and the Database are never mentioned above because the former is needed everytime a request is done by the clients to the server, while the latter is needed everytime a change in the system state happens.

@@ -1,0 +1,57 @@
+participant "Onboard Computer" as O
+participant "Router" as R
+participant "UserController" as UC
+participant "Database" as DB
+participant "BookingController" as BC
+participant "RentalController" as RC
+participant "CarController" as CC
+
+loop while pinIsCorrect == false
+    O->O: fillForm(pin)
+    O->R: pinIsCorrect = sendPin(form)
+    activate O
+    activate R
+    R->UC: routeRequest(pinRequest)
+    deactivate R
+    activate UC
+    UC->DB: validPin = getPin(pinSQLRequest) : Pin
+    activate DB
+    DB-->UC:
+    deactivate DB
+    alt pinRequest.pin != validPin
+        UC->R: response(pinIsCorrect) : false
+        activate R
+        else else
+        UC->R: response(pinIsCorrect) : true
+        deactivate UC
+    end
+    R-->O:
+    deactivate R
+    alt pinIsCorrect == false
+        O->O: showError()
+        else else
+        O->O: showSuccess()
+        deactivate O
+    end
+end
+
+O->R: startEngine()
+activate R
+R->BC: routeRequest(startRentalRequest)
+deactivate R
+activate BC
+BC->RC: startRental()
+activate RC
+RC->CC: updateCarStatus(status) : inUse
+activate CC
+CC-->RC:
+deactivate CC
+RC-->BC:
+deactivate RC
+BC->BC: endBooking()
+BC->R: response(rentalInfo)
+deactivate BC
+activate R
+R-->O:
+deactivate R
+O->O: showInfo(rentalInfo)

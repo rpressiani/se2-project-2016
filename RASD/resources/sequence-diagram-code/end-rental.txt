@@ -32,4 +32,4 @@ activate P
 P->S: ackPaymentRequest()
 deactivate P
 S->U: notifyRentalEnded()
-deactivateS
+deactivate S

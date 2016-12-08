@@ -1,0 +1,36 @@
+participant "Client" as C
+participant "BookingController" as BC
+participant "CarController" as CC
+participant "PaymentController" as PC
+participant "NotificationHelper" as N
+participant "Push gateway" as P
+
+BC->BC: elapsedBookingEvent(booking)
+activate BC
+BC->BC: stopBooking(booking)
+BC->CC: updateCarStatus(booking.car)
+activate CC
+CC-->BC:
+deactivate CC
+BC->PC: createElapsedBookingPayment(booking)
+activate PC
+PC->N: notifyPaymentService(bill)
+activate N
+N->P: pushNotification(payment, bill)
+activate P
+P-->N:
+deactivate P
+N-->PC:
+deactivate N
+PC-->BC:
+deactivate PC
+BC->N: notifyElapsedBooking(booking)
+activate N
+N->P: pushNotification(client, booking)
+activate P
+P->C: push(elapsedBooking)
+P-->N:
+deactivate P
+N-->BC:
+deactivate N
+deactivate BC
