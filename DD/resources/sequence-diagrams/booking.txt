@@ -1,7 +1,7 @@
 participant "Client" as C
 participant "Router" as R
-participant "Car controller" as CC
-participant "Booking controller" as BC
+participant "CarController" as CC
+participant "BookingController" as BC
 participant "Database" as DB
 
 loop while carBooked == false

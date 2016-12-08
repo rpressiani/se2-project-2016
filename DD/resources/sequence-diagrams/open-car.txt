@@ -1,8 +1,8 @@
 participant "Client" as C
 participant "Onboard computer" as O
 participant "Router" as R
-participant "Car controller" as CC
-participant "Notification helper" as N
+participant "CarController" as CC
+participant "NotificationHelper" as N
 participant "Push gateway" as P
 
 loop while isUserNearCar == false

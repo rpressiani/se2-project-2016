@@ -1,10 +1,10 @@
 participant "Onboard Computer" as O
 participant "Router" as R
-participant "User controller" as UC
+participant "UserController" as UC
 participant "Database" as DB
-participant "Booking controller" as BC
-participant "Rental controller" as RC
-participant "Car controller" as CC
+participant "BookingController" as BC
+participant "RentalController" as RC
+participant "CarController" as CC
 
 loop while pinIsCorrect == false
     O->O: fillForm(pin)

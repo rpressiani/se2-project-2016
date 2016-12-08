@@ -1,11 +1,11 @@
 participant "Onboard Computer" as O
 participant "Router" as R
-participant "Car controller" as CC
-participant "Map controller" as MC
-participant "Rental controller" as RC
-participant "Recovery controller" as REC
-participant "Payment controller" as PC
-participant "Notification helper" as NOT
+participant "CarController" as CC
+participant "MapController" as MC
+participant "RentalController" as RC
+participant "RecoveryController" as REC
+participant "PaymentController" as PC
+participant "NotificationHelper" as NOT
 participant "Push gateway" as PG
 
 O->R: isCarInSafeArea = checkCarPosition()
