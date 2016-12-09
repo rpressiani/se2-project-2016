@@ -3,10 +3,8 @@ participant "Router" as R
 participant "CarController" as CC
 participant "MapController" as MC
 participant "RentalController" as RC
-participant "RecoveryController" as REC
-participant "PaymentController" as PC
-participant "NotificationHelper" as NOT
-participant "Push gateway" as PG
+participant "RecoveryHelper" as REC
+participant "PaymentHelper" as PC
 
 O->R: isCarInSafeArea = checkCarPosition()
 activate O
@@ -18,7 +16,6 @@ CC->MC: isCarInSafeArea = checkCarInSafeArea(carPosition)
 activate MC
 MC-->CC:
 deactivate MC
-
 CC->R: response(isCarInSafeArea)
 deactivate CC
 activate R
@@ -41,29 +38,14 @@ alt isCarInSafeArea == false
     CC-->RC:
     deactivate CC
     opt carStatus.recovery == true
-        RC->REC: recover(carStatus)
+        RC->REC: notifyRecoveryService(carStatus)
         activate REC
-        REC->NOT: notifyRecoveryService(carStatus)
-        activate NOT
-        NOT->PG: pushNotification(recovery, carStatus)
-        activate PG
-        PG-->NOT:
-        deactivate PG
-        NOT-->REC:
-        deactivate NOT
         REC-->RC:
         deactivate REC
     end
-    RC->PC: createPayment(rentalInfo)
+    RC->PC: notifyPaymentService(bill)
     activate PC
-    PC->NOT: notifyPaymentService(bill)
-    activate NOT
-    NOT->PG: pushNotification(payment, bill)
-    activate PG
-    PG-->NOT:
-    deactivate PG
-    NOT-->PC:
-    deactivate NOT
+    
     PC-->RC:
     deactivate PC
     RC->R: response(rentalInfo)

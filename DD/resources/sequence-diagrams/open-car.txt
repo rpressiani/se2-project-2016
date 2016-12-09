@@ -3,7 +3,7 @@ participant "Onboard computer" as O
 participant "Router" as R
 participant "CarController" as CC
 participant "NotificationHelper" as N
-participant "Push gateway" as P
+participant "PushNotificationService" as P
 
 loop while isUserNearCar == false
     C->C: checkUserPosition(user, car) : boolean
