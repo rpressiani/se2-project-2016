@@ -13,7 +13,6 @@ The overall component design and interactions are shown in Figure (...).
 			\item Client app
 			\item UserController
 			\item NotificationHelper
-			\item Push gateway
 		\end{itemize}
 	\item[{[G3]}] User is able to log in the system.
 		\begin{itemize}
@@ -46,16 +45,14 @@ The overall component design and interactions are shown in Figure (...).
 		\begin{itemize}
 			\item CarController
 			\item BookingController
-			\item PaymentController
+			\item PaymentHelper
 			\item NotificationHelper
-			\item Push gateway
 		\end{itemize}
 	\item[{[G9]}] User is able to open the reserved car.
 		\begin{itemize}
 			\item Client app
 			\item CarController
 			\item NotificationHelper
-			\item Push gateway
 		\end{itemize}
 	\item[{[G10]}] The user can start a rental by inserting his/her PIN and then by igniting the engine.
 		\begin{itemize}
@@ -77,40 +74,42 @@ The overall component design and interactions are shown in Figure (...).
 			\item CarController
 			\item MapController
 			\item RentalController
-			\item RecoveryController
-			\item PaymentController
+			\item RecoveryHelper
+			\item PaymentHelper
 			\item NotificationHelper
-			\item Push gateway
 		\end{itemize}
 	\item[{[G13]}] If the user shares the rented car with at least two passengers during the whole duration of the rental, he/she is eligible for a 10\% discount on the total cost of that rental.
 		\begin{itemize}
 			\item CarController
-			\item PaymentController
+			\item RentalController
+			\item PaymentHelper
 		\end{itemize}
 	\item[{[G14]}] If the user leaves a car with the battery level higher than 50\%, he/she is eligible for a 20\% discount on the last ride.
 		\begin{itemize}
 			\item CarController
-			\item PaymentController
+			\item RentalController
+			\item PaymentHelper
 		\end{itemize}
 	\item[{[G15]}] If the car is left within one of the special parking areas and the user takes care of plugging the car into the power grid, he/she is eligible for a 30\% discount on the last ride.
 		\begin{itemize}
 			\item CarController
 			\item MapController
-			\item PaymentController
+			\item RentalController
+			\item PaymentHelper
 		\end{itemize}
 	\item[{[G16]}] If the car is left at more than 3KM from the nearest specia parking area or with the battery charge lower than 20\%, the user will pay an extra fee that will correspond to the 30\% of the cost of the last ride.
 		\begin{itemize}
 			\item CarController
 			\item MapController
-			\item PaymentController
+			\item RentalController
+			\item PaymentHelper
 		\end{itemize}
 	\item[{[G17]}] In case of low battery of a parked car, damaged car or empty battery, the car becomes unavailable until is recovered by an external company in order to fix all problems, depending on the situation, written above. 
 		\begin{itemize}
 			\item CarController
 			\item MapController
-			\item RecoveryController
+			\item RecoveryHelper
 			\item NotificationHelper
-			\item Push gateway
 		\end{itemize}
 \end{itemize}
 
