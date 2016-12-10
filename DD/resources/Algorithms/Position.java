@@ -1,5 +1,3 @@
-package sw2;
-
 public class Position {
   private float latitude;
   private float longitude;

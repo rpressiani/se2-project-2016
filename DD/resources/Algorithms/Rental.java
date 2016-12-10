@@ -1,5 +1,3 @@
-package sw2;
-
 public class Rental {
   
   private Car car;

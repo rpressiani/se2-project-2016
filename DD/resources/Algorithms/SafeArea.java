@@ -1,5 +1,3 @@
-package sw2;
-
 public class SafeArea {
 
   private Position position;
