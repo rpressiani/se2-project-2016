@@ -1,9 +1,17 @@
 \section{Overview}
-The high level architecture of the PowerEnJoy system is composed by three tiers. For what concerns the mobile app and the car app, executed by the onboard computer, the \textit{view} tier is completely client side. The dektop app paradigm is slightly different. The static content of the web pages is retrieved from a web server and for this reason the \textit{view} tier is splitted betweeb client and server side.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.225\textwidth]{tiers-diagram}
-	\caption[Tiers Diagram]{The picture above represents the tiers diagram of the PowerEnJoy architecture.}
+	\caption[Tiers Diagram]{The PowerEnJoy system is developed based on a three tiers architecture.}
 	\label{fig:tiers-diagram}
+\end{figure}
+
+The high level architecture of the PowerEnJoy system is composed by three tiers, corresponding to the view, application and data layer. The desktop application relies on an additional tier that corresponds to the WebServer.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{general-architecture}
+	\caption[General Architecture]{The general architecure of the PowerEnJoy system is composed by three types of clients (MobileDevice, PC and OnboardComputer), a WebServer that is shared between the view and the application layer, an APIServer and a database}
+	\label{fig:general-architecture}
 \end{figure}
