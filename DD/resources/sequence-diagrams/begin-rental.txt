@@ -35,7 +35,7 @@ loop while pinIsCorrect == false
     end
 end
 
-O->R: startEngine()
+O->R: bookingToRental()
 activate R
 R->BC: routeRequest(startRentalRequest)
 deactivate R
