@@ -33,16 +33,17 @@ alt isCarInSafeArea == false
     R->RC: routeRequest(endRentalRequest, carStatus)
     deactivate R
     activate RC
-    RC->CC: update(carStatus) : available
+    RC->CC: update(carStatus)
     activate CC
     CC-->RC:
-    deactivate CC
+    CC->CC: checkRecovery()
     opt carStatus.recovery == true
-        RC->REC: notifyRecoveryService(carStatus)
+        CC->REC: notifyRecoveryService(carStatus)
         activate REC
-        REC-->RC:
+        REC-->CC:
         deactivate REC
     end
+    deactivate CC
     RC->PC: notifyPaymentService(bill)
     activate PC
     
