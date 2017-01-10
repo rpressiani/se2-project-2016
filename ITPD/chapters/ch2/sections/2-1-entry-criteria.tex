@@ -1,4 +1,8 @@
 % !TEX root = ../../../main.tex
 
 \section{Entry Criteria}
-\blindtext
+Before starting the integration testing phase, there are some requirements that need to be met. It is fundamental to be completely aware of the software to be and some guarantees about the work done by developers on the single components must be assured.
+
+First of all, both the Requirements Analysis and Specification Document \cite{rasd} and the Design Document \cite{dd} must be fully redacted and approved. The RASD is essential for the developer team to let them develop the requested functionalities in a correct way. Moreover, the integration testing cannot begin unless all the components to be integrated are completely unit tested. The unit testing phase is feasible only if the software requirements are fully redacted and detailed. The DD (with respect to Chapter 2) presents the general software architecture and the interactions among components. This information is fundamental to design a correct and complete integration testing sequence, which will be described later in this chapter.
+
+Finally, the database schema needs to be designed before the integration testing and a instance of the database must be running locally or remotely, based on where the integration tests are executed. This allows the development team and especially those in charge of the integration testing to generate and maintain an instance of the system state during the tests execution.
