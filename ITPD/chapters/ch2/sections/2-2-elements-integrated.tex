@@ -8,12 +8,11 @@ First of all, the following components are the ones that together compose the co
 \begin{itemize}
 	\item CarController
 	\item MapController
-	\item RecoveryHelper
 	\item BookingController
 	\item RentalController
 \end{itemize}
 
-Part of the system core functionalities are related to the ones provided by the PaymentHelper and the NotificationHelper, which are in charge of the communications between the system and the external services. Since payment and notification issues are delegated to third party services, the effort for these integration tests will be quite limited.
+Some of the functionalities implemented in the PowerEnJoy system are provided by external services. Helper components, such as PaymentHelper, NotificationHelper and RecoveryHelper, are in charge of the communications between the system and these third party services. Since the goal of these component is only to exchange formatted messages with the external services, the effort for their integration tests will be quite limited.
 
 All the controllers that provide methods that can be called by the client applications need to be integrated with the Router component. The Router is the component in charge of receiving requests from the clients and to execute the right routines on the related controllers.
 
