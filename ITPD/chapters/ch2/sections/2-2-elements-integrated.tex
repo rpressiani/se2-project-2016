@@ -1,4 +1,20 @@
 % !TEX root = ../../../main.tex
 
 \section{Elements to be Integrated}
-\blindtext
+In this section a list of all the components that need to be integrated is provided. We remind the reader that a complete view of the system components is provided in Section 2.3 of the Design Document.
+
+First of all, the following components are the ones that together compose the core of the PowerEnJoy system:
+
+\begin{itemize}
+	\item CarController
+	\item MapController
+	\item RecoveryHelper
+	\item BookingController
+	\item RentalController
+\end{itemize}
+
+Part of the system core functionalities are related to the ones provided by the PaymentHelper and the NotificationHelper, which are in charge of the communications between the system and the external services. Since payment and notification issues are delegated to third party services, the effort for these integration tests will be quite limited.
+
+All the controllers that provide methods that can be called by the client applications need to be integrated with the Router component. The Router is the component in charge of receiving requests from the clients and to execute the right routines on the related controllers.
+
+For what concerns the communication between the system and the database, an external library is used as an ORM.
