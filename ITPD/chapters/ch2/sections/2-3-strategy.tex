@@ -1,4 +1,12 @@
 % !TEX root = ../../../main.tex
 
 \section{Integration Testing Strategy}
-\blindtext
+It is important to follow a pre-determined strategy for the integration testing to save costs and time. If the integration testing is performed for the first time on the entire system, the risk of allocating more resources than the ones expected can be very high.
+
+For this reason, the strategy adopted for the PowerEnJoy system is mainly bottom-up with some components integrated as threads. Moreover, a critical-module-first logic is considered in the whole process to assign priorities to the different test plans.
+
+% Dependencies
+In a bottom-up integration strategy, components need to be fully developed and unit tested to be integrated with other components. This allows to test incrementally small portions of the software. Thus, it will be more likely to find errors and faults in the early stages of the process. Moreover, components without dependencies among them can be tested in parallel and this is essential to maximize time and resources.
+
+% Thread integration for payment, notification and recovery
+Components related to the communications between the system and external services can be integrated at any stage of the development process. For this reason, the strategy that will be adopted is by threads: the integration test of these specific components will be executed when the functionalities are implemented. Other integration tests related to the parent component can be performed without dependencies to components thread-integrated.
