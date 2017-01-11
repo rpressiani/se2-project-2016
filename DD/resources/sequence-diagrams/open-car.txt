@@ -3,7 +3,6 @@ participant "Onboard computer" as O
 participant "Router" as R
 participant "CarController" as CC
 participant "NotificationHelper" as N
-participant "PushNotificationService" as P
 
 loop while isUserNearCar == false
     C->C: checkUserPosition(user, car) : boolean
@@ -16,16 +15,11 @@ deactivate R
 activate CC
 CC->N: notifyUnlockCar(car)
 activate N
-N->P: pushNotification(car, unlock)
-activate P
-
-P->O: push(unlock)
+N->O: push(car, unlock)
 activate O
-O->O: unlockDoors()
-P-->N:
-deactivate P
 N-->CC:
-deactivate N
+deactivateN
+O->O: unlockDoors()
 O->R: confirmUnlock(car)
 deactivate O
 activate R
