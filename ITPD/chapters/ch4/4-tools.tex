@@ -1,4 +1,33 @@
 % !TEX root = ../../main.tex
 
 \chapter{Tools and Test Equipment Required}
-\blindtext
+\section{Tools}
+In order to perform the integration testing in an efficient way both automated tools and manual testing will be used.
+
+The automated part of the integration testing will include all the components of the backend and will be done using the jUnit framework. jUnit is a valid tool to verify that the software procedures execute correctly if the correct input data are provided. Moreover, if something fails it assures that all the exceptions are caught and managed correctly.
+
+In addition, an important phase of the integration testing will be devoted to the manual testing of the client applications, that include the web app, the mobile app and the onboard computer app. Communications with the backend must be tested and the correct execution of all the procedures must be guaranteed.
+
+\section{Test Equipment}
+Both client applications and the backend infrastructure must be tested in environment similar to the deployment ones. In this section the testing environments that have been chosen to perform the integration testing are provided.
+
+Several mobile devices will be tested with the mobile applications and the mobile version of the web app:
+
+\begin{itemize}
+	\item iOS
+		\begin{itemize}[label={--}]
+			\item Each iPad starting from the 3rd generation one
+			\item Each iPhone starting from the 4S model
+		\end{itemize}
+			\item Android
+		\begin{itemize}[label={--}]
+			\item At least one smartphone from 4" to 6" at steps of 1/2"
+			\item At least one tablet from 7" to 12" at steps of 1"
+		\end{itemize}
+\end{itemize}
+
+The desktop web application will be tested with the most common browsers (Safari, Chrome, Firefox and Edge) and displays that vary from 11" to 27". No specific hardware requirements are needed.
+
+The onboard computer hardware will be unique and deployed on every car in the system. For this reason a single device with a fixed display will need to be tested.
+
+The backend will be tested using a cloud infrastructure with the same topology of the one that will be used in production. The hardware requirement of the development and testing environment will be limited with respect to the production environment because a smaller amount of resources is needed during the testing phase.
