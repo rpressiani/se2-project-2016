@@ -6,14 +6,214 @@
 \begin{table}[h]
 	\begin{tabularx}{\textwidth}{l X}
 		\hline
-		\textbf{Test Case Identifier}	&	Test\\	\hline
-		\textbf{Test Item(s)}			&	Test\\	\hline\hline
-		\multicolumn{2}{c}{\textbf{\textit{Method 1}}}	\\	\hline
-		\textbf{Input Specification}	&	Test\\	\hline
-		\textbf{Output Specification}	&	Test\\	\hline\hline
-				\multicolumn{2}{c}{\textbf{\textit{Method 2}}}	\\	\hline
-		\textbf{Input Specification}	&	Test\\	\hline
-		\textbf{Output Specification}	&	Test\\	\hline
+		\textbf{Test Case Identifier}	&	I1\\	\hline
+		\textbf{Test Items}			&	CarController $\rightarrow$ MapController \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{checkCarInSafeArea(CarPosition)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid car position.\\	\hline
+			\textbf{Output/Effect}	&	Returns true if the car is parked in a safe area, false otherwise.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I2\\	\hline
+		\textbf{Test Items}			&	CarController $\rightarrow$ RecoveryHelper \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{notifyRecoveryService(CarStatus)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid car status.\\	\hline
+			\textbf{Output/Effect}	&	A notification containing information about the car is sent to the recovery service.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I3\\	\hline
+		\textbf{Test Items}			&	BookingController $\rightarrow$ CarController \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{updateCarStatus(Car)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid car.\\	\hline
+			\textbf{Output/Effect}	&	Car status is correctly updated depending on the current situation.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I4\\	\hline
+		\textbf{Test Items}			&	Rental $\rightarrow$ CarController \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{updateCarStatus(Car)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid car.\\	\hline
+			\textbf{Output/Effect}	&	Car status is correctly updated depending on the current situation.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I5\\	\hline
+		\textbf{Test Items}			&	BookingController $\rightarrow$ RentalController \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{startRental()}}}	\\	\hline
+			\textbf{Input Specification}	&	No input is required for this method.\\	\hline
+			\textbf{Output/Effect}	&	A new rental instance is created.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I6\\	\hline
+		\textbf{Test Items}			&	BookingController $\rightarrow$ PaymentHelper \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{notifyPaymentService(bill)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid bill.\\	\hline
+			\textbf{Output/Effect}	&	The bill the user has to pay, depending on the situation, is sent to the payment service.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I7\\	\hline
+		\textbf{Test Items}			&	RentalController $\rightarrow$ PaymentHelper \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{notifyPaymentService(bill)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid bill.\\	\hline
+			\textbf{Output/Effect}	&	The bill the user has to pay, depending on the situation, is sent to the payment service.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I8\\	\hline
+		\textbf{Test Items}			&	CarController $\rightarrow$ NotificationHelper \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{notifyUnlockCar(car)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid car.\\	\hline
+			\textbf{Output/Effect}	&	The user is notified of car being unlocked.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I9\\	\hline
+		\textbf{Test Items}			&	BookingController $\rightarrow$ NotificationHelper \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{notifyElapsedBooking(booking)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid booking.\\	\hline
+			\textbf{Output/Effect}	&	The user is notified of his/her booking being elapsed.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I10\\	\hline
+		\textbf{Test Items}			&	Router $\rightarrow$ UserController \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{sendRegistration(form)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid registration form.\\	\hline
+			\textbf{Output/Effect}	&	The new user is registered and inserted in the database.\\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{sendLogin(form)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid login form.\\	\hline
+			\textbf{Output/Effect}	&	The user is successfully logged.\\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{sendPin(form)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid PIN form.\\	\hline
+			\textbf{Output/Effect}	&	Car's engine can now be ignited.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I11\\	\hline
+		\textbf{Test Items}			&	Router $\rightarrow$ MapController \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{findCars(position)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid position.\\	\hline
+			\textbf{Output/Effect}	&	All available cars near the provided position are shown.\\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{findSafeAreas(position)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid position.\\	\hline
+			\textbf{Output/Effect}	&	All safe areas near the provided position are shown.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I12\\	\hline
+		\textbf{Test Items}			&	Router $\rightarrow$ BookingController \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{confirmBooking(car)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid car.\\	\hline
+			\textbf{Output/Effect}	&	The status of the car selected by the user is set to RESERVED.\\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{bookingToRental()}}}	\\	\hline
+			\textbf{Input Specification}	&	No input is required for this method.\\	\hline
+			\textbf{Output/Effect}	&	A new rental request is sent to the BookingController in order to start the rental.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I13\\	\hline
+		\textbf{Test Items}			&	Router $\rightarrow$ RentalController \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{getInfo()}}}	\\	\hline
+			\textbf{Input Specification}	&	No input is required for this method.\\	\hline
+			\textbf{Output/Effect}	&	Information about the ongoing rental is shown to the user.\\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{endRental(carStatus)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid car status.\\	\hline
+			\textbf{Output/Effect}	&	A request is sent to the RentalController in order to end the ongoing rental.\\	\hline\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Template table}
+	\label{table:template-table}
+\end{table}
+
+\begin{table}[h]
+	\begin{tabularx}{\textwidth}{l X}
+		\hline
+		\textbf{Test Case Identifier}	&	I14\\	\hline
+		\textbf{Test Items}			&	Router $\rightarrow$ CarController \\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{getCarDetails(car)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid car.\\	\hline
+			\textbf{Output/Effect}	&	Information about the selected car is shown to the user.\\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{checkCarPosition()}}}	\\	\hline
+			\textbf{Input Specification}	&	No input is required for this method.\\	\hline
+			\textbf{Output/Effect}	&	The current position of the car is calculated.\\	\hline\hline
+		\multicolumn{2}{c}{\textbf{\textit{unlockCar(car)}}}	\\	\hline
+			\textbf{Input Specification}	&	A valid car.\\	\hline
+			\textbf{Output/Effect}	&	The car is unlocked.\\	\hline\hline
 	\end{tabularx}
 	\captionsetup{textformat=empty,labelformat=blank}
 	\caption{Template table}
