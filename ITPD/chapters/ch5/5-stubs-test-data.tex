@@ -3,65 +3,230 @@
 
 \section{Test Data}
 
-\subsection{Data Set Test Case 1}
+\subsection{Data Set Test Case I1}
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{| X | X |}
 		\hline
-		\multicolumn{2}{| c |}{\textbf{\textit{method1()}}}	\\	\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{checkCarInSafeArea(CarPosition)}}}	\\	\hline
 		\textit{Input}	&	\textit{Effect}	\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hhline{|==|}
-		\multicolumn{2}{| c |}{\textbf{\textit{method2()}}}	\\	\hline
-		\textit{Input}	&	\textit{Effect}	\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+			A CarPosition whose coordinates are invalid.	&	An InvalidPositionException is raised.\\	\hline
 	\end{tabularx}
 	\captionsetup{textformat=empty,labelformat=blank}
-	\caption{Data Set Test Case 1}
+	\caption{Data Set Test Case I1}
 	\label{table:data-set-table-1}
 \end{table}
 
-\subsection{Data Set Test Case 2}
+\subsection{Data Set Test Case I2}
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{| X | X |}
 		\hline
-		\multicolumn{2}{| c |}{\textbf{\textit{method3()}}}	\\	\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{notifyRecoveryService(CarStatus)}}}	\\	\hline
 		\textit{Input}	&	\textit{Effect}	\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hhline{|==|}
-		\multicolumn{2}{| c |}{\textbf{\textit{method4()}}}	\\	\hline
-		\textit{Input}	&	\textit{Effect}	\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+			A CarStatus with invalid fields.	&	An InvalidArgumentValueException is raised.\\	\hline
 	\end{tabularx}
 	\captionsetup{textformat=empty,labelformat=blank}
-	\caption{Data Set Test Case 2}
+	\caption{Data Set Test Case I2}
 	\label{table:data-set-table-2}
 \end{table}
 
-\subsection{Data Set Test Case 3}
+\subsection{Data Set Test Case I3}
 
 \begin{table}[H]
 	\begin{tabularx}{\textwidth}{| X | X |}
 		\hline
-		\multicolumn{2}{| c |}{\textbf{\textit{method5()}}}	\\	\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{updateCarStatus(Car)}}}	\\	\hline
 		\textit{Input}	&	\textit{Effect}	\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hhline{|==|}
-		\multicolumn{2}{| c |}{\textbf{\textit{method6()}}}	\\	\hline
-		\textit{Input}	&	\textit{Effect}	\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hline
-			test	&	test\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
 	\end{tabularx}
 	\captionsetup{textformat=empty,labelformat=blank}
-	\caption{Data Set Test Case 3}
+	\caption{Data Set Test Case I3}
+	\label{table:data-set-table-3}
+\end{table}
+
+\subsection{Data Set Test Case I4}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{updateCarStatus(Car)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Data Set Test Case I4}
 	\label{table:data-set-table-4}
+\end{table}
+
+\subsection{Data Set Test Case I5}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{startRental()}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			No input is required for this method.	&	\\	\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Data Set Test Case I5}
+	\label{table:data-set-table-5}
+\end{table}
+
+\subsection{Data Set Test Case I6}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{notifyPaymentService(bill)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+			A bill with invalid fields.	&	An InvalidArgumentValueException is raised.\\	\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Data Set Test Case I6}
+	\label{table:data-set-table-6}
+\end{table}
+
+\subsection{Data Set Test Case I7}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{notifyPaymentService(bill)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+			A bill with invalid fields.	&	An InvalidArgumentValueException is raised.\\	\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Data Set Test Case I7}
+	\label{table:data-set-table-7}
+\end{table}
+
+\subsection{Data Set Test Case I8}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{notifyUnlockCar(car)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Data Set Test Case I8}
+	\label{table:data-set-table-8}
+\end{table}
+
+\subsection{Data Set Test Case I9}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{notifyElapsedBooking(booking)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+			A booking with invalid fields.	&	An InvalidArgumentValueException is raised.\\	\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Data Set Test Case I9}
+	\label{table:data-set-table-9}
+\end{table}
+
+\subsection{Data Set Test Case I10}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{sendRegistration(form)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+			A form with invalid fields.	&	An InvalidArgumentValueException is raised.\\	\hhline{|==|}
+		\multicolumn{2}{| c |}{\textbf{\textit{sendLogin(form)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+			A form with invalid fields.	&	An InvalidArgumentValueException is raised.\\	\hhline{|==|}
+		\multicolumn{2}{| c |}{\textbf{\textit{sendPin(form)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+			A form with invalid fields.	&	An InvalidArgumentValueException is raised.\\	\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Data Set Test Case I10}
+	\label{table:data-set-table-10}
+\end{table}
+
+\subsection{Data Set Test Case I11}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{findCars(position)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+			A position whose coordinates are invalid.	&	An InvalidPositionException is raised.\\	\hhline{|==|}
+		\multicolumn{2}{| c |}{\textbf{\textit{findSafeAreas(position)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+			A position whose coordinates are invalid.	&	An InvalidPositionException is raised.\\	\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Data Set Test Case I11}
+	\label{table:data-set-table-11}
+\end{table}
+
+\subsection{Data Set Test Case I12}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{confirmBooking(car)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hhline{|==|}
+		\multicolumn{2}{| c |}{\textbf{\textit{bookingToRental()}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			No input is required for this method.	&	\\	\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Data Set Test Case I12}
+	\label{table:data-set-table-12}
+\end{table}
+
+\subsection{Data Set Test Case I13}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{getInfo()}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			No input is required for this method.	&	\\	\hhline{|==|}
+		\multicolumn{2}{| c |}{\textbf{\textit{endRental(carStatus)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+			A CarStatus with invalid fields.	&	An InvalidArgumentValueException is raised.\\	\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Data Set Test Case I13}
+	\label{table:data-set-table-13}
+\end{table}
+
+\subsection{Data Set Test Case I14}
+
+\begin{table}[H]
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\multicolumn{2}{| c |}{\textbf{\textit{getCarDetails(car)}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hhline{|==|}
+		\multicolumn{2}{| c |}{\textbf{\textit{checkCarPosition()}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			No input is required for this method.	&	\\  	\hhline{|==|}
+		\multicolumn{2}{| c |}{\textbf{\textit{unlockCar(car))}}}	\\	\hline
+		\textit{Input}	&	\textit{Effect}	\\	\hline
+			A null parameter.	&	A NullArgumentException is raised.\\	\hline
+	\end{tabularx}
+	\captionsetup{textformat=empty,labelformat=blank}
+	\caption{Data Set Test Case I14}
+	\label{table:data-set-table-14}
 \end{table}
