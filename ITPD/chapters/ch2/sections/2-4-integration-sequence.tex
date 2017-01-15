@@ -1,10 +1,10 @@
 % !TEX root = ../../../main.tex
 
 \section{Sequence of Component/Function Integration}
-\blindtext
+In this section we are going to describe the order of integration of PowerEnJoy's components. As already mentioned, the adopted integration strategy is mainly bottom-up, so, as notation, an arrow going from component C1 to component C2 means that C1 must have been already developed and unit tested in order to be integrated with C2.
 
 \subsection{Test Plan 1}
-\blindtext
+Referring to the critical-module-first logic adopted in the integration strategy, CarController is the most important component in the system, so we start to integrate it with the other related components.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{TestPlan/TP1}
@@ -13,7 +13,7 @@
 \end{figure}
 
 \subsection{Test Plan 2}
-\blindtext
+For the same reasons explained above in Test Plan 1, we can integrate RecoveryHelper with CarController using the threads strategy explained above.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{TestPlan/TP2}
@@ -22,7 +22,7 @@
 \end{figure}
 
 \subsection{Test Plan 3}
-\blindtext
+The core of the system is surely the relation between CarController, BookingController and RentalController, so the next step is to integrate CarController with the other two components.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{TestPlan/TP3}
@@ -31,7 +31,7 @@
 \end{figure}
 
 \subsection{Test Plan 4}
-\blindtext
+We can now integrate RentalController with BookingController to have core functionalities of the system fully tested and integrated.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{TestPlan/TP4}
@@ -40,7 +40,7 @@
 \end{figure}
 
 \subsection{Test Plan 5}
-\blindtext
+By threads we can integrate PaymentHelper with BoookingController and RentalController, following the bottom-up strategy in order to test the full system.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{TestPlan/TP5}
@@ -49,7 +49,7 @@
 \end{figure}
 
 \subsection{Test Plan 6}
-\blindtext
+For the same reasons explained above in Test Plan 5, we can also integrate by threads NotificationHelper with CarController and BookingController.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{TestPlan/TP6}
@@ -58,7 +58,7 @@
 \end{figure}
 
 \subsection{Test Plan 7}
-\blindtext
+Finally we can test the integration between all core components and the Router component, which is needed to start every process/request in the system.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{TestPlan/TP7}
