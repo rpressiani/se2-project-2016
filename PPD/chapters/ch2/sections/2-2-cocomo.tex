@@ -3,9 +3,73 @@
 
 \subsection{Scale Drivers}
 \blindtext
+\begin{table}[H]
+	\begin{adjustwidth}{-.5in}{-.5in}
+		\caption[Scale Drivers values]{Scale Drivers values for COCOMO II Model}
+		\label{table:scale_drivers}
+		\begin{tabularx}{1.25\textwidth}{| X | X | X | X | X | X | X |}
+			\hline
+			Scale Factors	&	Very Low	&	Low	&	Nominal	&	High	&	Very High	&	Extra High \\ \hline
+			
+			PREC	&	thoroughly unprecedented	&	largely unprecedented	&	somewhat unprecedented	&	generally familiar	&	largely familiar	&	thoroughly familiar \\
+			SF\textsubscript{j}	&	6.20	&	4.96	&	3.72	&	2.48	&	1.24	&	0.00 \\ \hline
+			FLEX	&	rigorous	&	occasional relaxation	&	some relaxation	&	general conformity	&	some conformity	&	general goals \\
+			SF\textsubscript{j}	&	5.07	&	4.05	&	3.04	&	2.03	&	1.01	&	0.00 \\ \hline
+		\end{tabularx}
+	\end{adjustwidth}
+\end{table}
+
+\blindtext
+
+\begin{table}[h!tb]
+	\centering
+	\caption{Scale Drivers overall estimation}
+	\label{tab:overall_sd}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Scale Driver		&	Factor	&	Value	\\ \hline
+		Test				&	Low		&	7	\\
+		Test				&	Average	&	4	\\ \hline
+		\multicolumn{2}{| l |}{Total}	&	55\\
+		\hline
+	\end{tabular}
+\end{table}
 
 \subsection{Cost Drivers}
 \blindtext
+
+\begin{table}[H]
+	\begin{adjustwidth}{-.5in}{-.5in}
+		\caption{Cost Drivers estimation}
+		\label{table:cost_drivers}
+		\begin{tabularx}{1.25\textwidth}{| X | X | X | X | X | X | X |}
+			\hline
+			\multicolumn{7}{| c |}{RELY Cost Drivers}	\\ \hhline{|=======|}
+			Scale Factors	&	Very Low	&	Low	&	Nominal	&	High	&	Very High	&	Extra High \\ \hline
+			
+			PREC	&	thoroughly unprecedented	&	largely unprecedented	&	somewhat unprecedented	&	generally familiar	&	largely familiar	&	thoroughly familiar \\
+			SF\textsubscript{j}	&	6.20	&	4.96	&	3.72	&	2.48	&	1.24	&	0.00 \\ \hline
+			FLEX	&	rigorous	&	occasional relaxation	&	some relaxation	&	general conformity	&	some conformity	&	general goals \\
+			SF\textsubscript{j}	&	5.07	&	4.05	&	3.04	&	2.03	&	1.01	&	0.00 \\ \hline
+		\end{tabularx}
+	\end{adjustwidth}
+\end{table}
+
+\blindtext
+
+\begin{table}[h!tb]
+	\centering
+	\caption{Cost Drivers overall estimation}
+	\label{tab:overall_cd}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Scale Driver		&	Factor	&	Value	\\ \hline
+		Test				&	Low		&	7	\\
+		Test				&	Average	&	4	\\ \hline
+		\multicolumn{2}{| l |}{Total}	&	55\\
+		\hline
+	\end{tabular}
+\end{table}
 
 \subsection{Effort Equation}
 \blindtext
