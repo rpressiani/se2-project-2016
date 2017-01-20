@@ -33,12 +33,6 @@ The last entities that need to be stored are the ones related to the bookings an
 
 The previous considerations and the UFP Complexity Weights provided in the Table \ref{tab:ufp} has led to the following ILFs Function Points estimation:
 
-%User data - Low
-%Car status - Low
-%Safe areas - Low
-%Booking - Avg
-%Rental - Avg
-
 \begin{table}[h!tb]
 	\centering
 	\caption{ILFs Function Points}
@@ -57,7 +51,18 @@ The previous considerations and the UFP Complexity Weights provided in the Table
 \end{table}
 
 \subsection{External Logic Files}
-\blindtext
+ELFs are groups of homogeneous data used by the application to be developed but retrieved and created by external applications.
+
+PowerEnJoy needs to exchange messages with the following services:
+\begin{itemize}
+	\item{\textbf{Recovery service} \tab The Recovery Service is required in order to advise an external company when a car requires attention because a non expected event has happened.}
+	\item{\textbf{Notification service} \tab The Notification Service is required in order to notify the user via the PowerEnJoy app or the onboard computer integrated in the cars of events not triggered directly by the user (e.g. the expiration of a booking).}
+	\item{\textbf{Payment service} \tab The Payment Service is required in order to charge the user with the due amount related to the PowerEnJoy services.}
+\end{itemize}
+
+The communications between PowerEnJoy and external application are executed through RESTful APIs and since simple strings needs to be transmitted it is expected that the data structure will be in JSON format.
+
+The previous considerations and the UFP Complexity Weights provided in the Table \ref{tab:ufp} has led to the following ELFs Function Points estimation:
 
 \begin{table}[h!tb]
 	\centering
