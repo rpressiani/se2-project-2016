@@ -11,10 +11,10 @@
 			\hline
 			Scale Factors	&	Very Low	&	Low	&	Nominal	&	High	&	Very High	&	Extra High \\ \hline
 			
-			PREC	&	thoroughly unprecedented	&	largely unprecedented	&	somewhat unprecedented	&	generally familiar	&	largely familiar	&	thoroughly familiar \\
+			PREC	&	thoroughly unprecedented	&	\textbf{largely unprecedented}	&	somewhat unprecedented	&	generally familiar	&	largely familiar	&	thoroughly familiar \\
 			SF\textsubscript{j}	&	6.20	&	4.96	&	3.72	&	2.48	&	1.24	&	0.00 \\ \hline
 			
-			FLEX	&	rigorous	&	occasional relaxation	&	some relaxation	&	general conformity	&	some conformity	&	general goals \\
+			FLEX	&	rigorous	&	\textbf{occasional relaxation}	&	some relaxation	&	general conformity	&	some conformity	&	general goals \\
 			SF\textsubscript{j}	&	5.07	&	4.05	&	3.04	&	2.03	&	1.01	&	0.00 \\ \hline
 			
 			RESL	&	little (20\%)	&	some (40\%)	&	often (60\%)	&	generally (75\%)	&	mostly (90\%)	&	full (100\%) \\
@@ -28,6 +28,15 @@
 		\end{tabularx}
 	\end{adjustwidth}
 \end{table}
+
+Here a brief description of scale drivers considered above:
+\begin{itemize}
+	\item Precedentedness - It reflects the previous experience of the team with the development of similar projects.
+	\item Development Flexibility -  It reflects the degree of flexibility in the development process with respect to specific constraints, requirements and external specifications.
+	\item Risk Resolution - It reflects the level of analysis with respect to the risk management plan and the definition of budget and schedule.
+	\item Team Cohesion - It reflects the level of coordination and synchronization of project's stakholders: users, customers, developers, maintainers, interfacers, others.
+	\item Process Maturity - It reflects the level of maturity of the software organization.
+\end{itemize}
 
 \begin{table}[H]
 	\centering
@@ -109,8 +118,7 @@
 	\end{adjustwidth}
 \end{table}
 
-
-\blindtext
+Here the result or scale drivers' evaluation:
 
 \begin{table}[h!tb]
 	\centering
@@ -119,9 +127,12 @@
 	\begin{tabular}{|l|l|l|}
 		\hline
 		Scale Driver		&	Factor	&	Value	\\ \hline
-		Test				&	Low		&	7	\\
-		Test				&	Average	&	4	\\ \hline
-		\multicolumn{2}{| l |}{Total}	&	55\\
+		Precedentedness (PREC)			&	Low			&	4.96	\\
+		Development flexibility (FLEX)	&	Low			&	4.05	\\ 
+		Risk resolution (RESL)			&	Very high	&   1.41		\\
+		Team cohesion (TEAM)			&   Very high   &   1.10	\\
+		Process maturity (PMAT)			&	Level 3		&	3.12	\\ \hline
+		\multicolumn{2}{| l |}{Total}					&	14.64\\
 		\hline
 	\end{tabular}
 \end{table}
