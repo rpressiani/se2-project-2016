@@ -13,11 +13,102 @@
 			
 			PREC	&	thoroughly unprecedented	&	largely unprecedented	&	somewhat unprecedented	&	generally familiar	&	largely familiar	&	thoroughly familiar \\
 			SF\textsubscript{j}	&	6.20	&	4.96	&	3.72	&	2.48	&	1.24	&	0.00 \\ \hline
+			
 			FLEX	&	rigorous	&	occasional relaxation	&	some relaxation	&	general conformity	&	some conformity	&	general goals \\
 			SF\textsubscript{j}	&	5.07	&	4.05	&	3.04	&	2.03	&	1.01	&	0.00 \\ \hline
+			
+			RESL	&	little (20\%)	&	some (40\%)	&	often (60\%)	&	generally (75\%)	&	mostly (90\%)	&	full (100\%) \\
+			SF\textsubscript{j}	&	7.07	&	5.65	&	4.24	&	2.83	&	1.41	&	0.00 \\ \hline
+			
+			TEAM	&	very difficult interactions	&	some difficult interactions	&	basically cooperative interactions	&	largely cooperative	&	highly cooperative	&	seamless interactions \\
+			SF\textsubscript{j}	&	5.48	&	4.38&	3.29	&	2.19	&	1.10	&	0.00 \\ \hline
+			
+			PMAT	&	SW-CMM Level 1 Lower	&	SW-CMM Level 1 Upper	&	SW-CMM Level 2	&	SW-CMM Level 3	&	SW-CMM Level 4	&	SW-CMM Level 5 \\
+			SF\textsubscript{j}	&	7.80	&	6.24	&	4.68	&	3.12	&	1.56	&	0.00 \\ \hline
 		\end{tabularx}
 	\end{adjustwidth}
 \end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{PREC Rating Levels}
+	\label{tab:prec_rating_levels}
+	\begin{adjustwidth}{-.5in}{-.5in}
+	\begin{tabularx}{1.25\textwidth}{|>{\hsize=.4\hsize}X|>{\centering\arraybackslash\hsize=.2\hsize}X|>{\centering\arraybackslash\hsize=.2\hsize}X|>{\centering\arraybackslash\hsize=.2\hsize}X|}
+		\hline
+		Feature		&	Very Low	&	Nominal / High	&	Extra High \\ \hline
+		Organizational understanding of product objectives	&	General	&	\textbf{Considerable}	&	Thorough	\\ \hline
+		Experience in working with related software systems	&	\textbf{Moderate}	&	Considerable	&	Extensive	\\ \hline
+		Concurrent development of associated new hardware and operational procedures	&	\textbf{Extensive}	&	Moderate	&	Some	\\ \hline
+		Need for innovative data processing architectures, algorithms	&	Considerable	&	\textbf{Some}	&	Minimal	\\ \hline
+	\end{tabularx}
+	\end{adjustwidth}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{FLEX Rating Levels}
+	\label{tab:flex_rating_levels}
+	\begin{adjustwidth}{-.5in}{-.5in}
+	\begin{tabularx}{1.25\textwidth}{|>{\hsize=.4\hsize}X|>{\centering\arraybackslash\hsize=.2\hsize}X|>{\centering\arraybackslash\hsize=.2\hsize}X|>{\centering\arraybackslash\hsize=.2\hsize}X|}
+		\hline
+		Feature		&	Very Low	&	Nominal / High	&	Extra High \\ \hline
+		
+		Need for software conformance with pre-established requirements	&	\textbf{Full}	&	Considerable	&	Basic	\\ \hline
+		
+		Need for software conformance with external interface specifications	&	Full	&	\textbf{Considerable}	&	Basic	\\ \hline
+		
+		Combination of inflexibilities above with premium on early completion	&	High	&	\textbf{Medium}	&	Low	\\ \hline
+	\end{tabularx}
+	\end{adjustwidth}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{RESL Rating Levels}
+	\label{tab:resl_rating_levels}
+	\begin{adjustwidth}{-.5in}{-.5in}
+	\begin{tabularx}{1.25\textwidth}{|>{\hsize=.25\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|}
+		\hline
+		Characteristic		&	Very Low	&	Low	&	Nominal	&	High	&	Very High	&	Extra High\\ \hline
+		
+		Risk Management Plan identifies all critical risk items, establishes milestones for resolving them by PDR or LCA.	&	None	&	Little	&	Some	&	Generally	&	\textbf{Mostly}	&	Fully	\\ \hline	
+		Schedule, budget, and internal milestones through PDR or LCA compatible with Risk Management Plan.	&	None	&	Little	&	Some	&	\textbf{Generally}	&	Mostly	&	Fully	\\ \hline
+%		
+		Percent of development schedule devoted to establishing architecture, given general product objectives.	&	5	&	10	&	17	&	\textbf{25}	&	33	&	40\\ \hline
+		
+		Percent of required top software architects available to project.	&	20	&	40	&	60	&	80	&	\textbf{100}	&	120\\ \hline
+		
+		Tool support available for resolving risk items, developing and verifying architectural specs.	&	None	&	Little	&	Some	&	Good	&	\textbf{Strong}	&	Full\\ \hline
+		
+		Level of uncertainty in key architecture drivers: mission, user interface, COTS, hardware, technology, performance.	&	Extreme	&	Significant	&	Consider- able	&	Some	&	\textbf{Little}	&	Very Little\\ \hline
+		
+		Number and criticality of risk items.	&	$>$ 10 Critical	&	5-10 Critical	&	2-4 Critical	&	1 Critical	&	$>$ 5 Non Critical	&	$<$ 5 Non Critical\\ \hline
+	\end{tabularx}
+	\end{adjustwidth}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{TEAM Rating Levels}
+	\label{tab:team_rating_levels}
+	\begin{adjustwidth}{-.5in}{-.5in}
+	\begin{tabularx}{1.25\textwidth}{|>{\hsize=.25\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|>{\centering\arraybackslash\hsize=.125\hsize}X|}
+		\hline
+		Characteristic		&	Very Low	&	Low	&	Nominal	&	High	&	Very High	&	Extra High\\ \hline
+		
+		Consistency of stakeholder objectives and cultures	&	Little	&	Some	&	Basic	&	Consider- able	&	Strong	&	\textbf{Full}	\\ \hline	
+		
+		Ability, willingness of stakeholders to accommodate other stakeholders? objectives	&	Little	&	Some	&	Basic	&	Consider- able	&	\textbf{Strong}	 &	Full	\\ \hline	
+%		
+		Experience of stakeholders in operating as a team	&	None	&	Little	&	Little	&	Basic	&	Consider- able	&	\textbf{Extensive}\\ \hline
+		
+		Stakeholder teambuilding to achieve shared vision and commitments	&	None	&	Little	&	Little	&	Basic	&	Consider- able	&	\textbf{Extensive} \\
+		\hline
+	\end{tabularx}
+	\end{adjustwidth}
+\end{table}
+
 
 \blindtext
 
@@ -304,7 +395,8 @@
 			\hline
 			\multicolumn{7}{| c |}{SITE Cost Drivers}	\\ \hhline{|=======|}
 			SITE Collocation Descriptors	&	Inter- national	&	Multi-city and multi-company	&	Multi-city or multi-company	&	Same city or metro area	&	Same building or complex	&	Fully collocated \\
-			SITE Communications Descriptors	&	Some phone, mail	&	Individual phone, fax	&	Narrow band email	&	Wideband electronic communication	&	Wideband elect. comm., occasional video conf.	&	Interactive multimedia \\ \hline
+			SITE Communications Descriptors	&	Some phone, mail	&	Individual phone, fax	&	
+Narrow band email	&	Wideband electronic communication	&	Wideband elect. comm., occasional video conf.	&	Interactive multimedia \\ \hline
 			Rating level	&	Very Low	&	Low	&	Nominal	&	High	&	Very High	&	Extra High \\ \hline
 			Effort multipliers	&	1.22	&	1.09	&	1.00	&	0.93	&	0.86	&	0.80 \\ \hline
 		\end{tabularx}
