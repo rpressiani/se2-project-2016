@@ -1,6 +1,6 @@
 % !TEX root = ../../../main.tex
 \section{Size estimation: Function Points}
-\blindtext
+The Function Points approach estimates the size of a software project starting from the functionalities that it has to offer. Several real projects have been analyzed to determine the number of FPs associated with a set of Function Types and the related estimated complexity. The values are provided by the table below:
 
 \begin{table}[h!tb]
 	\centering
@@ -21,7 +21,23 @@
 
 
 \subsection{Internal Logic Files}
-\blindtext
+ILFs are groups of homogeneous data or control information that are stored within the application. In the following paragraphs, a brief discussion about the PowerEnJoy ILFs will be provided.
+
+First of all, the users data need to be stored in the system. A User entity in the database stores personal details (name, surname and tax code), the driver licence identification number, login data and payment information. All these items are stored as strings.
+
+For what concerns the Car status entities, the items that need to be stored are the identification number, the status of the car (Available, Unavailable, Reserved and In Use) and the position as a structure that includes the latitude and longitude values.
+
+The same structure used to store the position of the cars is used in the Safe Area entities. This information allows the system to compare the position of a car, when a rent has just ended, with the ones that represent the safe areas. Moreover, a boolean value indicates the possibility or not to plug the cars with the power grid in a specific safe area.
+
+The last entities that need to be stored are the ones related to the bookings and rentals. The former stores the starting time of the booking and if that booking has expired or not. Moreover, it has a reference to the user that started the booking and the car that has been booked. The latter, instead, stores the rental duration and, at the end of the rental, the amount due by the driver is included.
+
+The previous considerations and the UFP Complexity Weights provided in the Table \ref{tab:ufp} has led to the following ILFs Function Points estimation:
+
+%User data - Low
+%Car status - Low
+%Safe areas - Low
+%Booking - Avg
+%Rental - Avg
 
 \begin{table}[h!tb]
 	\centering
@@ -30,12 +46,12 @@
 	\begin{tabular}{|l|l|l|}
 		\hline
 		ILF					&	Complexity	&	FPs	\\ \hline
-		User data				&	Low		&	7	\\
-		Car status				&	Low	    &	7	\\
-		Safe areas	  			&   Low     &   7   \\ 
-		Booking					&	Average &   10  \\
-		Rental					&   Average &   10  \\ \hline
-		\multicolumn{2}{| l |}{Total}		&	41\\
+		User data			&	Low			&	7	\\
+		Car status			&	Low			&	7	\\
+		Safe areas	  		&	Low			&	7	\\ 
+		Booking				&	Average		&	10	\\
+		Rental				&	Average		&	10	\\ \hline
+		\multicolumn{2}{| l |}{Total}		&	41	\\
 		\hline
 	\end{tabular}
 \end{table}
