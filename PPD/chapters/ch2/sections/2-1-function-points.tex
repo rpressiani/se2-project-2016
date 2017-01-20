@@ -30,9 +30,12 @@
 	\begin{tabular}{|l|l|l|}
 		\hline
 		ILF					&	Complexity	&	FPs	\\ \hline
-		Test				&	Low		&	7	\\
-		Test				&	Average	&	4	\\ \hline
-		\multicolumn{2}{| l |}{Total}	&	55\\
+		User data				&	Low		&	7	\\
+		Car status				&	Low	    &	7	\\
+		Safe areas	  			&   Low     &   7   \\ 
+		Booking					&	Average &   10  \\
+		Rental					&   Average &   10  \\ \hline
+		\multicolumn{2}{| l |}{Total}		&	41\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -47,9 +50,10 @@
 	\begin{tabular}{|l|l|l|}
 		\hline
 		ELF					&	Complexity	&	FPs	\\ \hline
-		Test				&	Low		&	7	\\
-		Test				&	Average	&	4	\\ \hline
-		\multicolumn{2}{| l |}{Total}	&	55\\
+		Recovery request	 &	 Low		&	5	\\
+		Notification message &	 Low		&	5	\\
+		Payment request		 &	 Low		&   5  \\ \hline
+		\multicolumn{2}{| l |}{Total}		&	15\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -64,9 +68,14 @@
 	\begin{tabular}{|l|l|l|}
 		\hline
 		EI					&	Complexity	&	FPs	\\ \hline
-		Test				&	Low		&	7	\\
-		Test				&	Average	&	4	\\ \hline
-		\multicolumn{2}{| l |}{Total}	&	55\\
+		User registration	&	Average		&	4	\\
+		Login/Logout		&	Low			&	2*3	\\ 
+		Book a car			&	Average		&	4	\\
+		Delete booking		&	Low			&	3	\\
+		Unlock car doors	&	Average		&	4	\\
+		Begin rental		&	High		&	6	\\
+		End rental			&	High		&	6	\\ \hline
+		\multicolumn{2}{| l |}{Total}		&	33\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -81,9 +90,10 @@
 	\begin{tabular}{|l|l|l|}
 		\hline
 		EQ					&	Complexity	&	FPs	\\ \hline
-		Test				&	Low		&	7	\\
-		Test				&	Average	&	4	\\ \hline
-		\multicolumn{2}{| l |}{Total}	&	55\\
+		Find cars						&	Low			&	3	\\
+		Get details about car			&	Low			&	3	\\ 
+		Get info about ongoing rental	&	High		&	6	\\ \hline
+		\multicolumn{2}{| l |}{Total}					&	12\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -98,9 +108,10 @@
 	\begin{tabular}{|l|l|l|}
 		\hline
 		EO					&	Complexity	&	FPs	\\ \hline
-		Test				&	Low		&	7	\\
-		Test				&	Average	&	4	\\ \hline
-		\multicolumn{2}{| l |}{Total}	&	55\\
+		Elapsed booking notification		&	Low		&	4	\\
+		Unlock car doors notification		&	Low		&	4	\\
+		Ended rental notification			&	Low		&	4	\\ \hline
+		\multicolumn{2}{| l |}{Total}					&	12\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -115,9 +126,12 @@
 	\begin{tabular}{|l|l|}
 		\hline
 		Function Type		&	Value	\\ \hline
-		Test				&	7	\\
-		Test				&	4	\\ \hline
-		Total				&	55\\
+		Internal Logic Files	&	41	\\
+		External Logic Files	&	15	\\ 
+		External Inputs			&	33	\\ 
+		External Inquiries		&	12	\\ 
+		External Outputs		&	12	\\ \hline
+		Total					&	113\\
 		\hline
 	\end{tabular}
 \end{table}
