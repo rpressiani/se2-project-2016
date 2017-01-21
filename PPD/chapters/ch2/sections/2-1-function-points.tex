@@ -13,8 +13,8 @@ The Function Points approach estimates the size of a software project starting f
 		Internal Logic Files	& 7 & 10 & 15\\
 		External Logic Files	& 5 & 7 & 10 \\
 		External Inputs			& 3 & 4 & 6 \\
-		External Outputs		& 4 & 5 & 7 \\
 		External Inquiries		& 3 & 4 & 6 \\
+		External Outputs		& 4 & 5 & 7 \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -103,6 +103,8 @@ Based on the estimated complexity of the EIs and the UFP Complexity Weights prov
 	\end{tabular}
 \end{table}
 
+If the reader wants to examine in depth the functionalities mentioned in the table above, more details can be found in the RASD \cite{rasd} and DD \cite{dd}.
+
 \subsection{External Inquiries}
 EQs are all the operations offered by the application that involves input and ouput data. This means that this kind of operations are are triggered by the users and a response with the data required is provided through the PowerEnJoy application or the onboard computers.
 
@@ -116,12 +118,14 @@ Based on the estimated complexity of the EQs and the UFP Complexity Weights prov
 		\hline
 		EQ					&	Complexity	&	FPs	\\ \hline
 		Find cars						&	Low			&	3	\\
-		Get details about car			&	Low			&	3	\\ 
-		Get info about ongoing rental	&	High		&	6	\\ \hline
-		\multicolumn{2}{| l |}{Total}					&	12\\
+		Get details about car			&	Low			&	3
+	\\ \hline
+		\multicolumn{2}{| l |}{Total}					&	6\\
 		\hline
 	\end{tabular}
 \end{table}
+
+If the reader wants to examine in depth the functionalities mentioned in the table above, more details can be found in the RASD \cite{rasd} and DD \cite{dd}.
 
 \subsection{External Outputs}
 EOs are all the operations offered by the application that generates data for the external environments. These operations are triggered by the PowerEnJoy backend system and sended to the users via the PowerEnJoy application and or the onboard computers.
@@ -137,11 +141,14 @@ Based on the estimated complexity of the EOs and the UFP Complexity Weights prov
 		EO					&	Complexity	&	FPs	\\ \hline
 		Elapsed booking notification		&	Low		&	4	\\
 		Unlock car doors notification		&	Low		&	4	\\
-		Ended rental notification			&	Low		&	4	\\ \hline
-		\multicolumn{2}{| l |}{Total}					&	12\\
+		Ended rental notification			&	Low		&	4	\\
+		Get info about ongoing rental		&	High	&	7	\\ \hline
+		\multicolumn{2}{| l |}{Total}					&	19\\
 		\hline
 	\end{tabular}
 \end{table}
+
+If the reader wants to examine in depth the functionalities mentioned in the table above, more details can be found in the RASD \cite{rasd} and DD \cite{dd}.
 
 \subsection{Overall Estimation}
 The following table provides the overall estimation of all the Function Types discussed above:
@@ -156,27 +163,27 @@ The following table provides the overall estimation of all the Function Types di
 		Internal Logic Files	&	41	\\
 		External Logic Files	&	15	\\ 
 		External Inputs			&	33	\\ 
-		External Inquiries		&	12	\\ 
-		External Outputs		&	12	\\ \hline
-		Total					&	113	\\
+		External Inquiries		&	6	\\ 
+		External Outputs		&	19	\\ \hline
+		Total					&	114	\\
 		\hline
 	\end{tabular}
 \end{table}
 
-\blindtext
+Below, the expected SLOC, calculated using the formulas provided by the Function Points method, is provided. The value has been calculated considering Java as the development language for the business logic part of the PowerEnJoy system (see Section 2.4 of DD \cite{dd} for more details).
 
 \begin{center}
 $SLOC = AVC * number \ of \ function \ points$
 \end{center}
-Given the AVC values provided by QSM \cite{avc_qsm}, the estimated SLOC lower bound is:
+Given the Java AVC values provided by QSM \cite{avc_qsm}, the estimated SLOC lower bound is:
 \begin{center}
-$SLOC = 14 * 113 = 1582$
+$SLOC = 14 * 114 = 1596$
 \end{center}
 While the upper bound is estimated to be:
 \begin{center}
-$SLOC = 134 * 113 = 15142$
+$SLOC = 134 * 114 = 15276$
 \end{center}
-In the following section the SLOC value that will be considered is the one calculated on the AVC average value:
+In the following section the SLOC value that will be considered is the one calculated using the AVC average value:
 \begin{center}
-$SLOC = 53 * 113 = 5989$
+$SLOC = 53 * 114 = 6042$
 \end{center}
