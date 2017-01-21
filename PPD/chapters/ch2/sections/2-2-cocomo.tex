@@ -493,8 +493,23 @@ $Effort = 2.94 * 1.1618 * 6.042^{1.0564} = 22.8411 PM \simeq 23 PM$
 \end{center}
 
 \subsection{Schedule Estimation}
-\blindtext
-
+COCOMO II provides also an equation to estimate the project duration given the parameter previously calculated:
+\begin{center}
+	$Duration = 3.67 * Effort^F$
+\end{center}
+where $F$ is equal to:
+\begin{center}
+	$F = 0.28 + 0.2 * (E - B)$
+\end{center}
+Given that,
+\begin{center}
+	$F = 0.28 + 0.2 * (1.0564 - 0.91) = 0.3093$ \\[10pt]
+	$Effort = 22.8411 PM$
+\end{center}
+the $Duration$ can be calculated as:
+\begin{center}
+	$Duration = 3.67 * 22.8411^{0.3093} = 9.66 \ months$
+\end{center}
 
 
 
