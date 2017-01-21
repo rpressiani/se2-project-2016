@@ -170,7 +170,7 @@ This cost driver attempts to capture the effect large test data requirements hav
 			DATA Descriptors	&	&	$\frac{D}{P}$ \textless\! 10	&	10 \!\textless\! $\frac{D}{P}$ \textless\! 100	&	100 \!\textless\! $\frac{D}{P}$ \textless\! 1000	&	$\frac{D}{P}$ \textgreater\! 1000	&	 \\ \hline
 			
 			Rating level	&	Very Low	&	Low	&	Nominal	&	High	&	Very High	&	Extra High \\ \hline
-			Effort multipliers	&	n/a	&	0.90	&	1.00	&	1.14	&	1.28	&	n/a \\ \hline
+			Effort multipliers	&	n/a	&	0.90	&	1.00	&	\textbf{1.14}	&	1.28	&	n/a \\ \hline
 		\end{tabularx}
 	\end{adjustwidth}
 \end{table}
@@ -445,7 +445,7 @@ Here the result of cost drivers' evaluation:
 		\hline
 		Cost Driver		&	Factor	&	Value	\\ \hline
 		Required Software Reliability (RELY)			&	High		&	1.10	\\
-		Database size (DATA)							&	Text		&	0		\\
+		Database size (DATA)							&	High		&	1.14	\\
 		Product complexity (CPLX)						&	High		&	1.17	\\
 		Required Reusability (RUSE)						&	High		&	1.07	\\
 		Documentation match to life-cycle needs (DOCU)	&	Nominal		&	1.00	\\
@@ -461,13 +461,68 @@ Here the result of cost drivers' evaluation:
 		Usage of Software Tools (TOOL)					&	High		&	0.90	\\
 		Multisite development (SITE)					&	High		&	0.93	\\
 		Required development schedule (SCED)			&	Nominal		&	1.00	\\	\hline
-		\multicolumn{2}{| l |}{Total}									&	000\\
+		\multicolumn{2}{| l |}{Total}									&	1.1618\\
 		\hline
 	\end{tabular}
 \end{table}
 
 \subsection{Effort Equation}
-\blindtext
+COCOMO II provides the following equation to estimate the effort required measured in Person-Months (PM):
+\begin{center}
+$Effort = A * EAF * KSLOC^E$
+\end{center}
+Where:
+\begin{itemize}
+	\item $A$ is a constant that approximates the productivity in PM / KSLOC
+	\item $EAF$ is the product of all the effort multipliers derived from the Cost Drivers
+	\item $E$ is an aggregation of the five Scale Factors obtained with the following equation:
+	\begin{center}
+		$E = B + 0.01 * \sum\limits_{j=1}^5 SF_j$
+	\end{center}
+	where $B = 0.91$.
+\end{itemize}
+
+Given that,
+\begin{center}
+$A = 2.94$ \\[10pt]
+$E = B + 0.01 * 14.64 = 1.0564$ \\[10pt]
+$EAF = \prod\limits_{i=1}^{15} EM_i = 1.1618$
+\end{center}
+the $Effort$ can be computed as:
+\begin{center}
+$Effort = 2.94 * 1.1618 * 6.042^{1.0564} = 22.8411 PM \simeq 23 PM$
+\end{center}
 
 \subsection{Schedule Estimation}
 \blindtext
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
