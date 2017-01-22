@@ -171,7 +171,10 @@ This is the measure of the extent to which the software must perform its intende
 \end{table}
 
 \subsubsection{Database Size}
-This cost driver attempts to capture the effect large test data requirements have on product development. The rating is determined by calculating D/P, the ratio of bytes in the testing database to SLOC in the program. The reason the size of the database is important to consider is because of the effort required to generate the test data that will be used to exercise the program.
+This cost driver attempts to capture the effect large test data requirements have on product development. The rating is determined by calculating D/P, the ratio of bytes in the testing database to SLOC in the program. The reason the size of the database is important to consider is because of the effort required to generate the test data that will be used to exercise the program. In the case of PowerEnJoy a 5 Mb testing database has been estimated and for this reason:
+\begin{center}
+	$\frac{D}{P} = 5*10^6 / 6042 = 828$
+\end{center}
 
 \begin{table}[H]
 	\begin{adjustwidth}{-.5in}{-.5in}
