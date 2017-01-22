@@ -1,8 +1,10 @@
 % !TEX root = ../../../main.tex
 \section{Cost and effort estimation: COCOMO II}
+In this section we’re going to use COCOMO II approach to estimate the cost and effort needed for developing PowerEnJoy system.
 
 \subsection{Scale Drivers}
-\blindtext
+For estimating scale drivers values we refer to the official COCOMO II table:
+
 \begin{table}[H]
 	\begin{adjustwidth}{-.5in}{-.5in}
 		\caption[Scale Drivers values]{Scale Drivers values for COCOMO II Model}
@@ -32,12 +34,7 @@
 Here a brief description of scale drivers considered above:
 \begin{itemize}
 	\item Precedentedness - It reflects the previous experience of the team with the development of similar projects.
-	\item Development Flexibility -  It reflects the degree of flexibility in the development process with respect to specific constraints, requirements and external specifications.
-	\item Risk Resolution - It reflects the level of analysis with respect to the risk management plan and the definition of budget and schedule.
-	\item Team Cohesion - It reflects the level of coordination and synchronization of project's stakholders: users, customers, developers, maintainers, interfacers, others.
-	\item Process Maturity - It reflects the level of maturity of the software organization.
-\end{itemize}
-
+	
 \begin{table}[H]
 	\centering
 	\caption{PREC Rating Levels}
@@ -52,8 +49,10 @@ Here a brief description of scale drivers considered above:
 		Need for innovative data processing architectures, algorithms	&	Considerable	&	\textbf{Some}	&	Minimal	\\ \hline
 	\end{tabularx}
 	\end{adjustwidth}
-\end{table}
-
+\end{table}	
+	
+	\item Development Flexibility -  It reflects the degree of flexibility in the development process with respect to specific constraints, requirements and external specifications.
+	
 \begin{table}[H]
 	\centering
 	\caption{FLEX Rating Levels}
@@ -70,8 +69,10 @@ Here a brief description of scale drivers considered above:
 		Combination of inflexibilities above with premium on early completion	&	High	&	\textbf{Medium}	&	Low	\\ \hline
 	\end{tabularx}
 	\end{adjustwidth}
-\end{table}
-
+\end{table}	
+	
+	\item Risk Resolution - It reflects the level of analysis with respect to the risk management plan and the definition of budget and schedule.
+	
 \begin{table}[H]
 	\centering
 	\caption{RESL Rating Levels}
@@ -95,8 +96,10 @@ Here a brief description of scale drivers considered above:
 		Number and criticality of risk items.	&	$>$ 10 Critical	&	5-10 Critical	&	\textbf{2-4 Critical}	&	1 Critical	&	$>$ 5 Non Critical	&	$<$ 5 Non Critical\\ \hline
 	\end{tabularx}
 	\end{adjustwidth}
-\end{table}
-
+\end{table}	
+	
+	\item Team Cohesion - It reflects the level of coordination and synchronization of project's stakholders: users, customers, developers, maintainers, interfacers, others.
+	
 \begin{table}[H]
 	\centering
 	\caption{TEAM Rating Levels}
@@ -116,7 +119,17 @@ Here a brief description of scale drivers considered above:
 		\hline
 	\end{tabularx}
 	\end{adjustwidth}
-\end{table}
+\end{table}	
+	
+	\item Process Maturity - It reflects the level of maturity of the software organization.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{CMM-levels}
+	\caption[CMMI Levels]{The picture above shows levels of process maturity defined by SW-CMM.}
+	\label{fig:CMM-Levels}
+\end{figure}
 
 Here the result of scale drivers' evaluation:
 
