@@ -1,0 +1,93 @@
+\documentclass{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[nottoc]{tocbibind}
+\usepackage{vhistory}
+\usepackage[ampersand]{easylist}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{scrextend}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[titletoc]{appendix}
+\usepackage{float}
+\usepackage{blindtext}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tabto} \NumTabs{3}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{hhline}
+\usepackage{chngpage}
+\usepackage{mathtools}
+
+\DeclareCaptionLabelFormat{blank}{}
+
+\graphicspath{ {img/} }
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.5\textwidth]{polimi-logo}\par\vspace{1cm}
+	{\scshape\LARGE Politecnico di Milano\par}
+	\vspace{1cm}
+	{\scshape\Large Software Engineering 2 project\par}
+	\vspace{1.5cm}
+	{\Huge\bfseries PowerEnJoy\par}
+	\vspace{0.5cm}
+	{\Large\bfseries Code Inspection Document\par}
+	\vspace{2cm}
+	\begin{multicols}{2}
+		{\Large\itshape Matteo Penco\par}
+		\vspace{0.25cm}
+		mat. 875740
+		\vfill\columnbreak
+		{\Large\itshape Riccardo Pressiani\par}
+		\vspace{0.25cm}
+		mat. 874948
+	\end{multicols}
+	
+	\vfill
+	
+	{\Large Version 0.1 draft\par}
+	\vspace{1.25cm}
+	{\large \today\par}
+\end{titlepage}
+
+\begin{versionhistory}
+	\vhEntry{0.1}{31.01.17}{RP}{Document created}
+\end{versionhistory}
+
+\vspace{5cm}
+{\noindent\Huge\bfseries Hours of work\par}
+\vspace{0.5cm}
+{\noindent Matteo Penco	\tab{???}\par}
+{\noindent Riccardo Pressiani \tab{???}\par}
+
+\tableofcontents
+
+% Introduction
+\input{chapters/ch1/1-code-description}
+% Project size, cost and effort estimation
+\input{chapters/ch2/2-code-issues}
+
+\begin{appendices}
+	% Checklist
+	\input{chapters/appendices/appendix-a/a-checklist}
+\end{appendices}
+
+% \listoffigures
+% \begingroup
+% \let\clearpage\relax
+% \listoftables
+% \endgroup
+
+\bibliographystyle{unsrt}
+\bibliography{ref}
+
+\end{document}
+
