@@ -1,3 +1,4 @@
+% !TEX root = ../../../../main.tex
 \section{Use case model}
 
 \begin{figure}[H]
@@ -6,6 +7,12 @@
 	\caption[Use case model]{The diagram above represents the use case model of the PowerEnJoy project. All the use cases are included along with the actors involved in their execution.}
 	\label{fig:use-case-model}
 \end{figure}
+
+Since several interpretation of the \texttt{extend} relationship can be adopted, for the sake of clarity, the one that the authors have adopted is the one reported by the IBM Knowledge Center \cite{extend}:
+
+\enquote{\textit{The extend relationship specifies that the incorporation of the extension use case is dependent on what happens when the base use case executes.}}
+
+For this reason, the extension use case can be executed only if some conditions are verified in the parent use case.
 
 \subsection{Use case description 1 - Sign up}
 \begin{labeling}{use-case-desc-1}
